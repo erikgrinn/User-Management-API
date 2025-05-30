@@ -1,0 +1,9 @@
+.vscode
+templates
+node_modules
+.env
+app.yaml
+assignment6.postman_collection.json
+assignment6.postman_environment.json
+grinne_assignment6.zip
+main.py
