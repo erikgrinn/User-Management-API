@@ -3,8 +3,10 @@
 # https://auth0.com/docs/quickstart/backend/python/01-authorization?_ga=2.46956069.349333901.1589042886-466012638.1589042885#create-the-jwt-validation-decorator
 # https://boto3.amazonaws.com/v1/documentation/api/latest/index.html
 # https://boto3.amazonaws.com/v1/documentation/api/latest/guide/dynamodb.html
-# https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/programming-with-python.html
 # https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3.html
+# https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/programming-with-python.html
+# https://auth0.com/docs/quickstart/backend/python/01-authorization?_ga=2.46956069.349333901.1589042886-466012638.1589042885#create-the-jwt-validation-decorator
+
 
 from flask import Flask, request, jsonify, send_file, render_template, url_for, redirect
 
