@@ -255,7 +255,7 @@ def post_avatar(id):
         )
         
         if 'Item' not in response:
-            return {"Error": "No business with this business_id exists"}, 403
+            return {"Error": "No avater found"}, 403
         
         item = response['Item']
         
