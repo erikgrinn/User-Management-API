@@ -6,7 +6,7 @@
 # https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3.html
 # https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/programming-with-python.html
 # https://auth0.com/docs/quickstart/backend/python/01-authorization?_ga=2.46956069.349333901.1589042886-466012638.1589042885#create-the-jwt-validation-decorator
-
+# Auth0 configuration: must enable password
 
 from flask import Flask, request, jsonify, send_file, render_template, url_for, redirect
 
@@ -178,7 +178,7 @@ def decode_jwt():
 
 @app.route('/')
 def index():
-    return "Please navigate to /users or /courses to use this API"
+    return "Please use postman for this API"
 
 # GET users
 @app.route('/users', methods=['GET'])
@@ -488,6 +488,7 @@ def patch_course(id):
         for key, value in content.items():
             update_expression_temp.append(f"{key} = :{key}")
             expr_attr_vals[f":{key}"] = value
+            
         update_expression = "SET " + ", ".join(update_expression_temp)
         coursesTable.update_item(
             Key={'id': id},

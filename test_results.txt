@@ -4,7 +4,7 @@ assignment6
 
 ❏ 1 user login (10 pts)
 ↳ 1. admin1 (1 pt)
-  POST http://grinne-flask-portfolio-env.eba-ekgd2k8s.us-east-1.elasticbeanstalk.com/users/login [200 OK, 1.16kB, 500ms]
+  POST http://grinne-flask-portfolio-env.eba-ekgd2k8s.us-east-1.elasticbeanstalk.com/users/login [200 OK, 1.16kB, 470ms]
   ✓  200 status code (0.25 pts)
   ✓  content is valid (0.75 pts)
   ┌
@@ -13,7 +13,7 @@ assignment6
   └
 
 ↳ 2. instructor1 (1 pt)
-  POST http://grinne-flask-portfolio-env.eba-ekgd2k8s.us-east-1.elasticbeanstalk.com/users/login [200 OK, 1.18kB, 247ms]
+  POST http://grinne-flask-portfolio-env.eba-ekgd2k8s.us-east-1.elasticbeanstalk.com/users/login [200 OK, 1.18kB, 272ms]
   ✓  200 status code (0.25 pts)
   ✓  content is valid (0.75 pts)
   ┌
@@ -22,7 +22,7 @@ assignment6
   └
 
 ↳ 3. instructor2 (1 pt)
-  POST http://grinne-flask-portfolio-env.eba-ekgd2k8s.us-east-1.elasticbeanstalk.com/users/login [200 OK, 1.18kB, 325ms]
+  POST http://grinne-flask-portfolio-env.eba-ekgd2k8s.us-east-1.elasticbeanstalk.com/users/login [200 OK, 1.18kB, 204ms]
   ✓  200 status code (0.25 pts)
   ✓  content is valid (0.75 pts)
   ┌
@@ -31,7 +31,7 @@ assignment6
   └
 
 ↳ 4. student1 (1 pt)
-  POST http://grinne-flask-portfolio-env.eba-ekgd2k8s.us-east-1.elasticbeanstalk.com/users/login [200 OK, 1.17kB, 305ms]
+  POST http://grinne-flask-portfolio-env.eba-ekgd2k8s.us-east-1.elasticbeanstalk.com/users/login [200 OK, 1.17kB, 260ms]
   ✓  200 status code (0.25 pts)
   ✓  content is valid (0.75 pts)
   ┌
@@ -40,7 +40,7 @@ assignment6
   └
 
 ↳ 5. student2 (1 pt)
-  POST http://grinne-flask-portfolio-env.eba-ekgd2k8s.us-east-1.elasticbeanstalk.com/users/login [200 OK, 1.17kB, 241ms]
+  POST http://grinne-flask-portfolio-env.eba-ekgd2k8s.us-east-1.elasticbeanstalk.com/users/login [200 OK, 1.17kB, 300ms]
   ✓  200 status code (0.25 pts)
   ✓  content is valid (0.75 pts)
   ┌
@@ -49,7 +49,7 @@ assignment6
   └
 
 ↳ 6. student3 (1 pt)
-  POST http://grinne-flask-portfolio-env.eba-ekgd2k8s.us-east-1.elasticbeanstalk.com/users/login [200 OK, 1.17kB, 284ms]
+  POST http://grinne-flask-portfolio-env.eba-ekgd2k8s.us-east-1.elasticbeanstalk.com/users/login [200 OK, 1.17kB, 263ms]
   ✓  200 status code (0.25 pts)
   ✓  content is valid (0.75 pts)
   ┌
@@ -58,7 +58,7 @@ assignment6
   └
 
 ↳ 7. student4 (1 pt)
-  POST http://grinne-flask-portfolio-env.eba-ekgd2k8s.us-east-1.elasticbeanstalk.com/users/login [200 OK, 1.17kB, 476ms]
+  POST http://grinne-flask-portfolio-env.eba-ekgd2k8s.us-east-1.elasticbeanstalk.com/users/login [200 OK, 1.17kB, 231ms]
   ✓  200 status code (0.25 pts)
   ✓  content is valid (0.75 pts)
   ┌
@@ -67,7 +67,7 @@ assignment6
   └
 
 ↳ 8. student5 (1 pt)
-  POST http://grinne-flask-portfolio-env.eba-ekgd2k8s.us-east-1.elasticbeanstalk.com/users/login [200 OK, 1.17kB, 369ms]
+  POST http://grinne-flask-portfolio-env.eba-ekgd2k8s.us-east-1.elasticbeanstalk.com/users/login [200 OK, 1.17kB, 244ms]
   ✓  200 status code (0.25 pts)
   ✓  content is valid (0.75 pts)
   ┌
@@ -76,7 +76,7 @@ assignment6
   └
 
 ↳ 9. student6 (1 pt)
-  POST http://grinne-flask-portfolio-env.eba-ekgd2k8s.us-east-1.elasticbeanstalk.com/users/login [200 OK, 1.17kB, 253ms]
+  POST http://grinne-flask-portfolio-env.eba-ekgd2k8s.us-east-1.elasticbeanstalk.com/users/login [200 OK, 1.17kB, 484ms]
   ✓  200 status code (0.25 pts)
   ✓  content is valid (0.75 pts)
   ┌
@@ -85,7 +85,7 @@ assignment6
   └
 
 ↳ 10. invalid body 400 (0.5 pt)
-  POST http://grinne-flask-portfolio-env.eba-ekgd2k8s.us-east-1.elasticbeanstalk.com/users/login [400 BAD REQUEST, 196B, 17ms]
+  POST http://grinne-flask-portfolio-env.eba-ekgd2k8s.us-east-1.elasticbeanstalk.com/users/login [400 BAD REQUEST, 196B, 16ms]
   ✓  400 status code (0.25 pts)
   ✓  400 error message (0.25 pts)
   ┌
@@ -94,7 +94,7 @@ assignment6
   └
 
 ↳ 11. invalid creds 401 (0.5 pt)
-  POST http://grinne-flask-portfolio-env.eba-ekgd2k8s.us-east-1.elasticbeanstalk.com/users/login [401 UNAUTHORIZED, 182B, 227ms]
+  POST http://grinne-flask-portfolio-env.eba-ekgd2k8s.us-east-1.elasticbeanstalk.com/users/login [401 UNAUTHORIZED, 182B, 207ms]
   ✓  401 status code (0.25 pts)
   ✓  401 error message (0.25 pts)
   ┌
@@ -106,40 +106,40 @@ assignment6
 
 ❏ 2 all users (10 pts)
 ↳ 1. all users 200 (9 pts)
-  GET http://grinne-flask-portfolio-env.eba-ekgd2k8s.us-east-1.elasticbeanstalk.com/users [200 OK, 892B, 256ms]
+  GET http://grinne-flask-portfolio-env.eba-ekgd2k8s.us-east-1.elasticbeanstalk.com/users [200 OK, 1.06kB, 161ms]
   ✓  200 status code (0.25 pts)
   ✓  9 users(0.75 pts)
-  ✓  Each has 3 properties (2 pts)
+  1. Each has 3 properties (2 pts)
   ✓  sub value of admin in database matches sub in jwt (1 pts)
   ✓  sub values of instructors in database matches sub in jwts (1 pts)
   ✓  sub values of students in database matches sub in jwts (1 pts)
   ┌
-  │ '******* All Users Test 1 points = 9'
+  │ '******* All Users Test 1 points = 7'
   └
 
 ↳ 2. all users 401 (0.5 pts)
-  GET http://grinne-flask-portfolio-env.eba-ekgd2k8s.us-east-1.elasticbeanstalk.com/users [401 UNAUTHORIZED, 182B, 57ms]
+  GET http://grinne-flask-portfolio-env.eba-ekgd2k8s.us-east-1.elasticbeanstalk.com/users [401 UNAUTHORIZED, 182B, 53ms]
   ✓  401 status code (0.25 pts)
   ✓  403 error message (0.25 pts)
   ┌
   │ '******* All Users Test 2 points = 0.5'
-  │ '******* All Users Tests Total points = 9.5'
+  │ '******* All Users Tests Total points = 7.5'
   └
 
 ↳ 3. all users 403 (0.5 pts)
-  GET http://grinne-flask-portfolio-env.eba-ekgd2k8s.us-east-1.elasticbeanstalk.com/users [403 FORBIDDEN, 209B, 62ms]
+  GET http://grinne-flask-portfolio-env.eba-ekgd2k8s.us-east-1.elasticbeanstalk.com/users [403 FORBIDDEN, 209B, 55ms]
   ✓  403 status code (0.25 pts)
   ✓  403 error message (0.25 pts)
   ┌
   │ '******* All Users Test 3 points = 0.5'
   │ '+++++++++++++++++++++++++++++++++++++++++'
-  │ 'All Users Tests Total points = 10'
+  │ 'All Users Tests Total points = 8'
   │ '+++++++++++++++++++++++++++++++++++++++++'
   └
 
 ❏ 3a get a user - basic (4 pts)
 ↳ 1. get admin1 200 (1 pt)
-  GET http://grinne-flask-portfolio-env.eba-ekgd2k8s.us-east-1.elasticbeanstalk.com/users/2383139621159859 [200 OK, 227B, 57ms]
+  GET http://grinne-flask-portfolio-env.eba-ekgd2k8s.us-east-1.elasticbeanstalk.com/users/2383139621159859 [200 OK, 227B, 59ms]
   ✓  200 status code (0.25 pts)
   ✓  admin user has either 3 or 4 properties (0.75 pts)
   ┌
@@ -148,7 +148,7 @@ assignment6
   └
 
 ↳ 2. get instructor1 200 (1 pt)
-  GET http://grinne-flask-portfolio-env.eba-ekgd2k8s.us-east-1.elasticbeanstalk.com/users/1379345941161984 [200 OK, 245B, 64ms]
+  GET http://grinne-flask-portfolio-env.eba-ekgd2k8s.us-east-1.elasticbeanstalk.com/users/1379345941161984 [200 OK, 245B, 91ms]
   ✓  200 status code (0.25 pts)
   ✓  an instructor has either 4 or 5 properties (0.75 pts)
   ┌
@@ -157,7 +157,7 @@ assignment6
   └
 
 ↳ 3. get student1 200 (1 pt)
-  GET http://grinne-flask-portfolio-env.eba-ekgd2k8s.us-east-1.elasticbeanstalk.com/users/2469651765456926 [200 OK, 242B, 54ms]
+  GET http://grinne-flask-portfolio-env.eba-ekgd2k8s.us-east-1.elasticbeanstalk.com/users/2469651765456926 [200 OK, 242B, 67ms]
   ✓  200 status code (0.25 pts)
   ✓  a student has either 4 or 5 properties (0.75 pts)
   ┌
@@ -166,7 +166,7 @@ assignment6
   └
 
 ↳ 4. get a user 401 (0.5 pt)
-  GET http://grinne-flask-portfolio-env.eba-ekgd2k8s.us-east-1.elasticbeanstalk.com/users/2469651765456926 [401 UNAUTHORIZED, 182B, 49ms]
+  GET http://grinne-flask-portfolio-env.eba-ekgd2k8s.us-east-1.elasticbeanstalk.com/users/2469651765456926 [401 UNAUTHORIZED, 182B, 42ms]
   ✓  401 status code (0.25 pts)
   ✓  403 error message (0.25 pts)
   ┌
@@ -175,7 +175,7 @@ assignment6
   └
 
 ↳ 5. get a user 403 (0.5 pt)
-  GET http://grinne-flask-portfolio-env.eba-ekgd2k8s.us-east-1.elasticbeanstalk.com/users/2469651765456926 [403 FORBIDDEN, 209B, 55ms]
+  GET http://grinne-flask-portfolio-env.eba-ekgd2k8s.us-east-1.elasticbeanstalk.com/users/2469651765456926 [403 FORBIDDEN, 209B, 47ms]
   ✓  403 status code (0.25 pts)
   ✓  403 error message (0.25 pts)
   ┌
@@ -187,7 +187,7 @@ assignment6
 
 ❏ 3b, 4 create avatar (1 + 3 pts)
 ↳ 1. create/update avatar student_1 200 (1 pts)
-  POST http://grinne-flask-portfolio-env.eba-ekgd2k8s.us-east-1.elasticbeanstalk.com/users/2469651765456926/avatar [200 OK, 273B, 274ms]
+  POST http://grinne-flask-portfolio-env.eba-ekgd2k8s.us-east-1.elasticbeanstalk.com/users/2469651765456926/avatar [200 OK, 273B, 251ms]
   ✓  200 status code (0.25 pts)
   ✓  the response has the avatar_url (0.75 pts)
   ┌
@@ -195,7 +195,7 @@ assignment6
   └
 
 ↳ 2. student1 has avatar_url (1 pt)
-  GET http://grinne-flask-portfolio-env.eba-ekgd2k8s.us-east-1.elasticbeanstalk.com/users/2469651765456926 [200 OK, 411B, 79ms]
+  GET http://grinne-flask-portfolio-env.eba-ekgd2k8s.us-east-1.elasticbeanstalk.com/users/2469651765456926 [200 OK, 411B, 64ms]
   ✓  200 status code (0.25 pts)
   ✓  student1 has an avatar URL (0.75 pts)
   ┌
@@ -205,7 +205,7 @@ assignment6
   └
 
 ↳ 3. update avatar student_1 200 (1 pts)
-  POST http://grinne-flask-portfolio-env.eba-ekgd2k8s.us-east-1.elasticbeanstalk.com/users/2469651765456926/avatar [200 OK, 273B, 215ms]
+  POST http://grinne-flask-portfolio-env.eba-ekgd2k8s.us-east-1.elasticbeanstalk.com/users/2469651765456926/avatar [200 OK, 273B, 259ms]
   ✓  200 status code (0.25 pts)
   ✓  the response has the avatar_url (0.75 pts)
   ┌
@@ -214,7 +214,7 @@ assignment6
   └
 
 ↳ 4. post avatar 400 (0.25 pt)
-  POST http://grinne-flask-portfolio-env.eba-ekgd2k8s.us-east-1.elasticbeanstalk.com/users/2469651765456926/avatar [400 BAD REQUEST, 196B, 190ms]
+  POST http://grinne-flask-portfolio-env.eba-ekgd2k8s.us-east-1.elasticbeanstalk.com/users/2469651765456926/avatar [400 BAD REQUEST, 196B, 177ms]
   ✓  400 status code (0.15 pts)
   ✓  error message is correct (0.10 pts)
   ┌
@@ -223,7 +223,12 @@ assignment6
   └
 
 ↳ 5. post avatar 401 (0.25 pt)
-  POST http://grinne-flask-portfolio-env.eba-ekgd2k8s.us-east-1.elasticbeanstalk.com/users/2469651765456926/avatar [401 UNAUTHORIZED, 182B, 114ms]
+  ┌
+  │ 'Form param `file`, file load error: "\'/Users/erikgri
+  │ nn/Documents/OSU CS Post-Bacc/CS 493/AWS/CS493/portfol
+  │ io_project/images/student1.png\'", no such file'
+  └
+  POST http://grinne-flask-portfolio-env.eba-ekgd2k8s.us-east-1.elasticbeanstalk.com/users/2469651765456926/avatar [401 UNAUTHORIZED, 182B, 62ms]
   ✓  401 status code (0.15 pts)
   ✓  error message is correct (0.1 pts)
   ┌
@@ -232,7 +237,12 @@ assignment6
   └
 
 ↳ 6. post avatar 403 (0.5 pt)
-  POST http://grinne-flask-portfolio-env.eba-ekgd2k8s.us-east-1.elasticbeanstalk.com/users/2469651765456926/avatar [403 FORBIDDEN, 209B, 121ms]
+  ┌
+  │ 'Form param `file`, file load error: "/Users/erikgrinn
+  │ /Documents/AWS/CS493/portfolio_project/images/student1
+  │ .png", no such file'
+  └
+  POST http://grinne-flask-portfolio-env.eba-ekgd2k8s.us-east-1.elasticbeanstalk.com/users/2469651765456926/avatar [403 FORBIDDEN, 209B, 46ms]
   ✓  403 status code (0.25 pts)
   ✓  error message is correct (0.25 pts)
   ┌
@@ -244,7 +254,7 @@ assignment6
 
 ❏ 5. get user's avatar (1.75 + 2.25 pts)
 ↳ 1. get avatar 200 (0.25 + 2.25 pt)
-  GET http://grinne-flask-portfolio-env.eba-ekgd2k8s.us-east-1.elasticbeanstalk.com/users/2469651765456926/avatar [200 OK, 117.05kB, 142ms]
+  GET http://grinne-flask-portfolio-env.eba-ekgd2k8s.us-east-1.elasticbeanstalk.com/users/2469651765456926/avatar [200 OK, 117.05kB, 155ms]
   ✓  200 status code (0.25 pts)
   ┌
   │ '******* Avatar Get Test 1 points = 0.25'
@@ -252,7 +262,7 @@ assignment6
   └
 
 ↳ 2. get avatar 401 (0.5 pt)
-  GET http://grinne-flask-portfolio-env.eba-ekgd2k8s.us-east-1.elasticbeanstalk.com/users/2469651765456926/avatar [401 UNAUTHORIZED, 182B, 49ms]
+  GET http://grinne-flask-portfolio-env.eba-ekgd2k8s.us-east-1.elasticbeanstalk.com/users/2469651765456926/avatar [401 UNAUTHORIZED, 182B, 44ms]
   ✓  401 status code (0.25 pts)
   ✓  error message is correct (0.25 pts)
   ┌
@@ -261,7 +271,7 @@ assignment6
   └
 
 ↳ 3. get avatar 403 (0.5 pt)
-  GET http://grinne-flask-portfolio-env.eba-ekgd2k8s.us-east-1.elasticbeanstalk.com/users/2469651765456926/avatar [403 FORBIDDEN, 209B, 51ms]
+  GET http://grinne-flask-portfolio-env.eba-ekgd2k8s.us-east-1.elasticbeanstalk.com/users/2469651765456926/avatar [403 FORBIDDEN, 209B, 46ms]
   ✓  403 status code (0.25 pts)
   ✓  error message is correct (0.25 pts)
   ┌
@@ -270,7 +280,7 @@ assignment6
   └
 
 ↳ 4. get avatar 404 (0.5 pt)
-  GET http://grinne-flask-portfolio-env.eba-ekgd2k8s.us-east-1.elasticbeanstalk.com/users/1265467786417574/avatar [404 NOT FOUND, 176B, 50ms]
+  GET http://grinne-flask-portfolio-env.eba-ekgd2k8s.us-east-1.elasticbeanstalk.com/users/1265467786417574/avatar [404 NOT FOUND, 176B, 56ms]
   ✓  404 status code (0.25 pts)
   ✓  error message is correct (0.25 pts)
   ┌
@@ -282,7 +292,7 @@ assignment6
 
 ❏ 3b, 6 delete avatar (1 + 3 pts)
 ↳ 1. delete avatar 401 (0.5 pt)
-  DELETE http://grinne-flask-portfolio-env.eba-ekgd2k8s.us-east-1.elasticbeanstalk.com/users/2469651765456926/avatar [401 UNAUTHORIZED, 182B, 783ms]
+  DELETE http://grinne-flask-portfolio-env.eba-ekgd2k8s.us-east-1.elasticbeanstalk.com/users/2469651765456926/avatar [401 UNAUTHORIZED, 182B, 71ms]
   ✓  401 status code (0.25 pts)
   ✓  error message is correct (0.25 pts)
   ┌
@@ -291,7 +301,7 @@ assignment6
   └
 
 ↳ 2. delete avatar 204 (1 pt)
-  DELETE http://grinne-flask-portfolio-env.eba-ekgd2k8s.us-east-1.elasticbeanstalk.com/users/2469651765456926/avatar [204 NO CONTENT, 143B, 115ms]
+  DELETE http://grinne-flask-portfolio-env.eba-ekgd2k8s.us-east-1.elasticbeanstalk.com/users/2469651765456926/avatar [204 NO CONTENT, 143B, 92ms]
   ✓  204 status code (1 pts)
   ┌
   │ '******* Avatar Delete Test 2 points = 1'
@@ -299,7 +309,7 @@ assignment6
   └
 
 ↳ 3. student1 no avatar_url (1 pt)
-  GET http://grinne-flask-portfolio-env.eba-ekgd2k8s.us-east-1.elasticbeanstalk.com/users/2469651765456926 [200 OK, 242B, 54ms]
+  GET http://grinne-flask-portfolio-env.eba-ekgd2k8s.us-east-1.elasticbeanstalk.com/users/2469651765456926 [200 OK, 242B, 52ms]
   ✓  200 status code (0.25 pts)
   ✓  student1 no longer has an avatar URL (0.75 pts)
   ┌
@@ -310,7 +320,7 @@ assignment6
   └
 
 ↳ 4. delete avatar 403 (0.5 pt)
-  DELETE http://grinne-flask-portfolio-env.eba-ekgd2k8s.us-east-1.elasticbeanstalk.com/users/2469651765456926/avatar [403 FORBIDDEN, 209B, 61ms]
+  DELETE http://grinne-flask-portfolio-env.eba-ekgd2k8s.us-east-1.elasticbeanstalk.com/users/2469651765456926/avatar [403 FORBIDDEN, 209B, 46ms]
   ✓  403 status code (0.25 pts)
   ✓  error message is correct (0.25 pts)
   ┌
@@ -319,7 +329,7 @@ assignment6
   └
 
 ↳ 5. delete avatar 404 (1 pt)
-  DELETE http://grinne-flask-portfolio-env.eba-ekgd2k8s.us-east-1.elasticbeanstalk.com/users/2469651765456926/avatar [404 NOT FOUND, 176B, 55ms]
+  DELETE http://grinne-flask-portfolio-env.eba-ekgd2k8s.us-east-1.elasticbeanstalk.com/users/2469651765456926/avatar [404 NOT FOUND, 176B, 59ms]
   ✓  404 status code (0.5 pts)
   ✓  error message is correct (0.5 pts)
   ┌
@@ -331,7 +341,7 @@ assignment6
 
 ❏ 7. create a course (10 pts)
 ↳ 1. create 1st course (2 pt)
-  POST http://grinne-flask-portfolio-env.eba-ekgd2k8s.us-east-1.elasticbeanstalk.com/courses [201 CREATED, 411B, 60ms]
+  POST http://grinne-flask-portfolio-env.eba-ekgd2k8s.us-east-1.elasticbeanstalk.com/courses [201 CREATED, 411B, 98ms]
   ✓  status code is 201 (0.25 pts)
   ✓  content is valid (1.5 pts)
   ✓  self URL is valid (0.25 pts)
@@ -341,7 +351,7 @@ assignment6
   └
 
 ↳ 2. create course 400 missing prop (1 pt)
-  POST http://grinne-flask-portfolio-env.eba-ekgd2k8s.us-east-1.elasticbeanstalk.com/courses [400 BAD REQUEST, 196B, 63ms]
+  POST http://grinne-flask-portfolio-env.eba-ekgd2k8s.us-east-1.elasticbeanstalk.com/courses [400 BAD REQUEST, 196B, 59ms]
   ✓  400 status code (0.5 pts)
   ✓  400 error message (0.25 pts)
   ✓  The response content type is application.json (0.25 pts)
@@ -351,7 +361,7 @@ assignment6
   └
 
 ↳ 3. create course 400 invalid instructor (2 pt)
-  POST http://grinne-flask-portfolio-env.eba-ekgd2k8s.us-east-1.elasticbeanstalk.com/courses [400 BAD REQUEST, 196B, 70ms]
+  POST http://grinne-flask-portfolio-env.eba-ekgd2k8s.us-east-1.elasticbeanstalk.com/courses [400 BAD REQUEST, 196B, 65ms]
   ✓  400 status code (1.5 pts)
   ✓  400 error message (0.25 pts)
   ✓  The response content type is application.json (0.25 pts)
@@ -361,7 +371,7 @@ assignment6
   └
 
 ↳ 4. create course 401 (1 pt)
-  POST http://grinne-flask-portfolio-env.eba-ekgd2k8s.us-east-1.elasticbeanstalk.com/courses [401 UNAUTHORIZED, 182B, 347ms]
+  POST http://grinne-flask-portfolio-env.eba-ekgd2k8s.us-east-1.elasticbeanstalk.com/courses [401 UNAUTHORIZED, 182B, 63ms]
   ✓  401 status code (0.5 pts)
   ✓  401 error message (0.5 pts)
   ┌
@@ -370,7 +380,7 @@ assignment6
   └
 
 ↳ 5. create course 403 (1 pt)
-  POST http://grinne-flask-portfolio-env.eba-ekgd2k8s.us-east-1.elasticbeanstalk.com/courses [403 FORBIDDEN, 209B, 59ms]
+  POST http://grinne-flask-portfolio-env.eba-ekgd2k8s.us-east-1.elasticbeanstalk.com/courses [403 FORBIDDEN, 209B, 70ms]
   ✓  403 status code (0.5 pts)
   ✓  403 error message (0.5 pts)
   ┌
@@ -379,7 +389,7 @@ assignment6
   └
 
 ↳ 6. create 2nd course (1 pts)
-  POST http://grinne-flask-portfolio-env.eba-ekgd2k8s.us-east-1.elasticbeanstalk.com/courses [201 CREATED, 404B, 72ms]
+  POST http://grinne-flask-portfolio-env.eba-ekgd2k8s.us-east-1.elasticbeanstalk.com/courses [201 CREATED, 404B, 68ms]
   ✓  status code is 201 (0.1 pts)
   ✓  content is valid (0.8 pts)
   ✓  self URL is valid (0.1 pts)
@@ -389,7 +399,7 @@ assignment6
   └
 
 ↳ 7. create 3rd course (1 pts)
-  POST http://grinne-flask-portfolio-env.eba-ekgd2k8s.us-east-1.elasticbeanstalk.com/courses [201 CREATED, 403B, 57ms]
+  POST http://grinne-flask-portfolio-env.eba-ekgd2k8s.us-east-1.elasticbeanstalk.com/courses [201 CREATED, 403B, 70ms]
   ✓  status code is 201 (0.1 pts)
   ✓  content is valid (0.8 pts)
   ✓  self URL is valid (0.1 pts)
@@ -399,7 +409,7 @@ assignment6
   └
 
 ↳ 8. create 4th course (1 pts)
-  POST http://grinne-flask-portfolio-env.eba-ekgd2k8s.us-east-1.elasticbeanstalk.com/courses [201 CREATED, 398B, 62ms]
+  POST http://grinne-flask-portfolio-env.eba-ekgd2k8s.us-east-1.elasticbeanstalk.com/courses [201 CREATED, 398B, 80ms]
   ✓  status code is 201 (0.1 pts)
   ✓  content is valid (0.8 pts)
   ✓  self URL is valid (0.1 pts)
@@ -412,7 +422,7 @@ assignment6
 
 ❏ 8. get all courses (10 pts)
 ↳ 1. get courses page 1 (7.5 pts)
-  GET http://grinne-flask-portfolio-env.eba-ekgd2k8s.us-east-1.elasticbeanstalk.com/courses [200 OK, 1.01kB, 24ms]
+  GET http://grinne-flask-portfolio-env.eba-ekgd2k8s.us-east-1.elasticbeanstalk.com/courses [200 OK, 1.01kB, 35ms]
   ✓  200 status code
   ✓  The response content type is application.json
   ✓  Exactly 3 courses on the page
@@ -428,7 +438,7 @@ assignment6
   └
 
 ↳ 2. get courses 2nd page (2.5 pts)
-  GET http://grinne-flask-portfolio-env.eba-ekgd2k8s.us-east-1.elasticbeanstalk.com/courses?offset=3&limit=3 [200 OK, 1.04kB, 26ms]
+  GET http://grinne-flask-portfolio-env.eba-ekgd2k8s.us-east-1.elasticbeanstalk.com/courses?offset=3&limit=3 [200 OK, 1.01kB, 35ms]
   ✓  200 status code
   ✓  The response content type is application.json
   ✓  At least 1 course on the page
@@ -442,7 +452,7 @@ assignment6
 
 ❏ 9. get a course (5 pts)
 ↳ 1. get course 1 200 (1 pts)
-  GET http://grinne-flask-portfolio-env.eba-ekgd2k8s.us-east-1.elasticbeanstalk.com/courses/1750527462828230 [200 OK, 406B, 26ms]
+  GET http://grinne-flask-portfolio-env.eba-ekgd2k8s.us-east-1.elasticbeanstalk.com/courses/6043014607512796 [200 OK, 406B, 18ms]
   ✓  status code is 200 (0.05 pts)
   ✓  content is valid (0.75 pts)
   ✓  self URL is valid (0.15 pts)
@@ -453,7 +463,7 @@ assignment6
   └
 
 ↳ 2. get course 2 200 (1 pts)
-  GET http://grinne-flask-portfolio-env.eba-ekgd2k8s.us-east-1.elasticbeanstalk.com/courses/2931959218966798 [200 OK, 399B, 20ms]
+  GET http://grinne-flask-portfolio-env.eba-ekgd2k8s.us-east-1.elasticbeanstalk.com/courses/8725988093477719 [200 OK, 399B, 22ms]
   ✓  content is valid (0.75 pts)
   ✓  self URL is valid (0.25 pts)
   ┌
@@ -462,7 +472,7 @@ assignment6
   └
 
 ↳ 3. get course 3 200 (1 pts)
-  GET http://grinne-flask-portfolio-env.eba-ekgd2k8s.us-east-1.elasticbeanstalk.com/courses/8450777040898265 [200 OK, 398B, 20ms]
+  GET http://grinne-flask-portfolio-env.eba-ekgd2k8s.us-east-1.elasticbeanstalk.com/courses/7097134127423694 [200 OK, 398B, 25ms]
   ✓  content is valid (0.75 pts)
   ✓  self URL is valid (0.25 pts)
   ┌
@@ -471,7 +481,7 @@ assignment6
   └
 
 ↳ 4. get course 4 200 (1 pts)
-  GET http://grinne-flask-portfolio-env.eba-ekgd2k8s.us-east-1.elasticbeanstalk.com/courses/3537334758511343 [200 OK, 393B, 20ms]
+  GET http://grinne-flask-portfolio-env.eba-ekgd2k8s.us-east-1.elasticbeanstalk.com/courses/1450454256493310 [200 OK, 393B, 23ms]
   ✓  content is valid (0.75 pts)
   ✓  self URL is valid (0.25 pts)
   ┌
@@ -480,7 +490,7 @@ assignment6
   └
 
 ↳ 5. get a course 404 (1 pts)
-  GET http://grinne-flask-portfolio-env.eba-ekgd2k8s.us-east-1.elasticbeanstalk.com/courses/1 [404 NOT FOUND, 176B, 23ms]
+  GET http://grinne-flask-portfolio-env.eba-ekgd2k8s.us-east-1.elasticbeanstalk.com/courses/1 [404 NOT FOUND, 176B, 25ms]
   ✓  status code is 404 (0.5 pts)
   ✓  content is valid (0.5 pts)
   ┌
@@ -490,7 +500,7 @@ assignment6
   │ '+++++++++++++++++++++++++++++++++++++++++'
   │ '+++++++++++++++++++++++++++++++++++++++++'
   │ '1. user login          = 10'
-  │ '2. all users           = 10'
+  │ '2. all users           = 8'
   │ '3a get a user - basic  = 4'
   │ '3b get a user - avurl  = 2'
   │ '4 create avatar        = 3'
@@ -513,11 +523,18 @@ assignment6
 ├─────────────────────────┼────────────────────┼────────────────────┤
 │      prerequest-scripts │                 49 │                  0 │
 ├─────────────────────────┼────────────────────┼────────────────────┤
-│              assertions │                114 │                  0 │
+│              assertions │                114 │                  1 │
 ├─────────────────────────┴────────────────────┴────────────────────┤
-│ total run duration: 8.3s                                          │
+│ total run duration: 6.8s                                          │
 ├───────────────────────────────────────────────────────────────────┤
-│ total data received: 132.12kB (approx)                            │
+│ total data received: 132.26kB (approx)                            │
 ├───────────────────────────────────────────────────────────────────┤
-│ average response time: 146ms [min: 17ms, max: 783ms, s.d.: 154ms] │
+│ average response time: 117ms [min: 16ms, max: 484ms, s.d.: 110ms] │
 └───────────────────────────────────────────────────────────────────┘
+
+[31m  # [39m[31m failure        [39m[31m detail                                                   [39m
+[90m    [39m[90m                [39m[90m                                                          [39m
+ 1.  AssertionError  Each has 3 properties (2 pts)                            
+                     expected 8 to equal 9                                    
+                     at assertion:2 in test-script                            
+                     inside "2 all users (10 pts) / 1. all users 200 (9 pts)" 
