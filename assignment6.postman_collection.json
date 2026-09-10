@@ -1,0 +1,3196 @@
+{
+	"info": {
+		"_postman_id": "aacc52c9-387b-4501-813c-a16b65baae49",
+		"name": "assignment6",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "44254978"
+	},
+	"item": [
+		{
+			"name": "1 user login (10 pts)",
+			"item": [
+				{
+					"name": "1. admin1 (1 pt)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const respJSON = pm.response.json()\r",
+									"\r",
+									"pm.environment.set(\"admin1_jwt\", respJSON[\"token\"]);\r",
+									"pm.environment.set(\"admin1_sub\", get_sub(respJSON[\"token\"]))\r",
+									"let points = 0; \r",
+									"\r",
+									"pm.test(\"200 status code (0.25 pts)\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"    points += 0.25\r",
+									"});\r",
+									"\r",
+									"pm.test(\"content is valid (0.75 pts)\", function () {\r",
+									"    pm.expect(respJSON).to.have.property(\"token\");           \r",
+									"    points += 0.75\r",
+									"});\r",
+									"\r",
+									"\r",
+									"console.log('******* User login Test 1 points = ' + points);\r",
+									"console.log('******* User login Tests current points = ' + points);\r",
+									"pm.environment.set(\"points_login\", points);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n\t\"username\": \"{{admin1_username}}\",\r\n\t\"password\": \"{{password}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{app_url}}/users/login",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "2. instructor1 (1 pt)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const respJSON = pm.response.json();\r",
+									"\r",
+									"let points = 0;\r",
+									"\r",
+									"pm.environment.set(\"instructor1_jwt\",  respJSON[\"token\"]);\r",
+									"pm.environment.set(\"instructor1_sub\", get_sub(respJSON[\"token\"]))\r",
+									"\r",
+									"pm.test(\"200 status code (0.25 pts)\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"    points += 0.25\r",
+									"});\r",
+									"\r",
+									"pm.test(\"content is valid (0.75 pts)\", function () {\r",
+									"    pm.expect(respJSON).to.have.property(\"token\");           \r",
+									"    points += 0.75\r",
+									"});\r",
+									"\r",
+									"\r",
+									"console.log('******* User login Test 2 points = ' + points);\r",
+									"let points_login = pm.environment.get('points_login') + points;\r",
+									"console.log('******* User login Tests current points = ' + points_login);\r",
+									"pm.environment.set(\"points_login\", points_login);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n\t\"username\": \"{{instructor1_username}}\",\r\n\t\"password\": \"{{password}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{app_url}}/users/login",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "3. instructor2 (1 pt)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const respJSON = pm.response.json()\r",
+									"pm.environment.set(\"instructor2_jwt\",  respJSON[\"token\"]);\r",
+									"pm.environment.set(\"instructor2_sub\", get_sub(respJSON[\"token\"]));\r",
+									"\r",
+									"let points = 0; \r",
+									"\r",
+									"pm.test(\"200 status code (0.25 pts)\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"    points += 0.25\r",
+									"});\r",
+									"\r",
+									"pm.test(\"content is valid (0.75 pts)\", function () {\r",
+									"    pm.expect(respJSON).to.have.property(\"token\");           \r",
+									"    points += 0.75\r",
+									"});\r",
+									"\r",
+									"\r",
+									"console.log('******* User login Test 3 points = ' + points);\r",
+									"let points_login = pm.environment.get('points_login') + points;\r",
+									"console.log('******* User login Tests current points = ' + points_login);\r",
+									"pm.environment.set(\"points_login\", points_login);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n\t\"username\": \"{{instructor2_username}}\",\r\n\t\"password\": \"{{password}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{app_url}}/users/login",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "4. student1 (1 pt)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const respJSON = pm.response.json();\r",
+									"\r",
+									"pm.environment.set(\"student1_jwt\",  respJSON[\"token\"]);\r",
+									"pm.environment.set(\"student1_sub\", get_sub(respJSON[\"token\"]));\r",
+									"\r",
+									"let points = 0; \r",
+									"\r",
+									"pm.test(\"200 status code (0.25 pts)\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"    points += 0.25\r",
+									"});\r",
+									"\r",
+									"pm.test(\"content is valid (0.75 pts)\", function () {\r",
+									"    pm.expect(respJSON).to.have.property(\"token\");           \r",
+									"    points += 0.75\r",
+									"});\r",
+									"\r",
+									"\r",
+									"console.log('******* User login Test 4 points = ' + points);\r",
+									"let points_login = pm.environment.get('points_login') + points;\r",
+									"console.log('******* User login Tests current points = ' + points_login);\r",
+									"pm.environment.set(\"points_login\", points_login);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n\t\"username\": \"{{student1_username}}\",\r\n\t\"password\": \"{{password}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{app_url}}/users/login",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "5. student2 (1 pt)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const respJSON = pm.response.json();\r",
+									"\r",
+									"pm.environment.set(\"student2_jwt\",  respJSON[\"token\"]);\r",
+									"pm.environment.set(\"student2_sub\", get_sub(respJSON[\"token\"]));\r",
+									"\r",
+									"let points = 0; \r",
+									"\r",
+									"pm.test(\"200 status code (0.25 pts)\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"    points += 0.25\r",
+									"});\r",
+									"\r",
+									"pm.test(\"content is valid (0.75 pts)\", function () {\r",
+									"    pm.expect(respJSON).to.have.property(\"token\");           \r",
+									"    points += 0.75\r",
+									"});\r",
+									"\r",
+									"console.log('******* User login Test 5 points = ' + points);\r",
+									"let points_login = pm.environment.get('points_login') + points;\r",
+									"console.log('******* User login Tests current points = ' + points_login);\r",
+									"pm.environment.set(\"points_login\", points_login);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n\t\"username\": \"{{student2_username}}\",\r\n\t\"password\": \"{{password}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{app_url}}/users/login",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "6. student3 (1 pt)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const respJSON = pm.response.json();\r",
+									"\r",
+									"pm.environment.set(\"student3_jwt\",  respJSON[\"token\"]);\r",
+									"pm.environment.set(\"student3_sub\", get_sub(respJSON[\"token\"]));\r",
+									"\r",
+									"let points = 0; \r",
+									"\r",
+									"pm.test(\"200 status code (0.25 pts)\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"    points += 0.25\r",
+									"});\r",
+									"\r",
+									"pm.test(\"content is valid (0.75 pts)\", function () {\r",
+									"    pm.expect(respJSON).to.have.property(\"token\");           \r",
+									"    points += 0.75\r",
+									"});\r",
+									"\r",
+									"\r",
+									"console.log('******* User login Test 6 points = ' + points);\r",
+									"let points_login = pm.environment.get('points_login') + points;\r",
+									"console.log('******* User login Tests current points = ' + points_login);\r",
+									"pm.environment.set(\"points_login\", points_login);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n\t\"username\": \"{{student3_username}}\",\r\n\t\"password\": \"{{password}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{app_url}}/users/login",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "7. student4 (1 pt)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const respJSON = pm.response.json();\r",
+									"\r",
+									"pm.environment.set(\"student4_jwt\",  respJSON[\"token\"]);\r",
+									"pm.environment.set(\"student4_sub\", get_sub(respJSON[\"token\"]));\r",
+									"\r",
+									"let points = 0; \r",
+									"\r",
+									"pm.test(\"200 status code (0.25 pts)\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"    points += 0.25\r",
+									"});\r",
+									"\r",
+									"pm.test(\"content is valid (0.75 pts)\", function () {\r",
+									"    pm.expect(respJSON).to.have.property(\"token\");           \r",
+									"    points += 0.75\r",
+									"});\r",
+									"\r",
+									"\r",
+									"console.log('******* User login Test 7 points = ' + points);\r",
+									"let points_login = pm.environment.get('points_login') + points;\r",
+									"console.log('******* User login Tests current points = ' + points_login);\r",
+									"pm.environment.set(\"points_login\", points_login);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n\t\"username\": \"{{student4_username}}\",\r\n\t\"password\": \"{{password}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{app_url}}/users/login",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "8. student5 (1 pt)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const respJSON = pm.response.json();\r",
+									"\r",
+									"pm.environment.set(\"student5_jwt\",  respJSON[\"token\"]);\r",
+									"pm.environment.set(\"student5_sub\", get_sub(respJSON[\"token\"]));\r",
+									"\r",
+									"let points = 0; \r",
+									"\r",
+									"pm.test(\"200 status code (0.25 pts)\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"    points += 0.25\r",
+									"});\r",
+									"\r",
+									"pm.test(\"content is valid (0.75 pts)\", function () {\r",
+									"    pm.expect(respJSON).to.have.property(\"token\");           \r",
+									"    points += 0.75\r",
+									"});\r",
+									"\r",
+									"\r",
+									"console.log('******* User login Test 8 points = ' + points);\r",
+									"let points_login = pm.environment.get('points_login') + points;\r",
+									"console.log('******* User login Tests current points = ' + points_login);\r",
+									"pm.environment.set(\"points_login\", points_login);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n\t\"username\": \"{{student5_username}}\",\r\n\t\"password\": \"{{password}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{app_url}}/users/login",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "9. student6 (1 pt)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const respJSON = pm.response.json();\r",
+									"\r",
+									"pm.environment.set(\"student6_jwt\",  respJSON[\"token\"]);\r",
+									"pm.environment.set(\"student6_sub\", get_sub(respJSON[\"token\"]));\r",
+									"\r",
+									"let points = 0; \r",
+									"\r",
+									"pm.test(\"200 status code (0.25 pts)\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"    points += 0.25\r",
+									"});\r",
+									"\r",
+									"pm.test(\"content is valid (0.75 pts)\", function () {\r",
+									"    pm.expect(respJSON).to.have.property(\"token\");           \r",
+									"    points += 0.75\r",
+									"});\r",
+									"\r",
+									"\r",
+									"console.log('******* User login Test 9 points = ' + points);\r",
+									"let points_login = pm.environment.get('points_login') + points;\r",
+									"console.log('******* User login Tests current points = ' + points_login);\r",
+									"pm.environment.set(\"points_login\", points_login);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n\t\"username\": \"{{student6_username}}\",\r\n\t\"password\": \"{{password}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{app_url}}/users/login",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "10. invalid body 400 (0.5 pt)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const respJSON = pm.response.json();\r",
+									"\r",
+									"let points = 0; \r",
+									"\r",
+									"pm.test(\"400 status code (0.25 pts)\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"    points += 0.25\r",
+									"});\r",
+									"\r",
+									"pm.test(\"400 error message (0.25 pts)\", function () {\r",
+									"     pm.expect(pm.response.json()[\"Error\"]).to.eq(\"The request body is invalid\");\r",
+									"     points += 0.25\r",
+									"});\r",
+									"\r",
+									"\r",
+									"console.log('******* User login Test 10 points = ' + points);\r",
+									"let points_login = pm.environment.get('points_login') + points;\r",
+									"console.log('******* User login Tests current points = ' + points_login);\r",
+									"pm.environment.set(\"points_login\", points_login);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n\t\"username\": \"{{student6_username}}\",\r\n\t\"passwordd\": \"{{password}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{app_url}}/users/login",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "11. invalid creds 401 (0.5 pt)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const respJSON = pm.response.json();\r",
+									"\r",
+									"let points = 0; \r",
+									"\r",
+									"pm.test(\"401 status code (0.25 pts)\", function () {\r",
+									"    pm.response.to.have.status(401);\r",
+									"    points += 0.25\r",
+									"});\r",
+									"\r",
+									"pm.test(\"401 error message (0.25 pts)\", function () {\r",
+									"     pm.expect(pm.response.json()[\"Error\"]).to.eq(\"Unauthorized\");\r",
+									"     points += 0.25\r",
+									"});\r",
+									"\r",
+									"console.log('******* User login Test 11 points = ' + points);\r",
+									"let points_login = pm.environment.get('points_login') + points;\r",
+									"console.log('+++++++++++++++++++++++++++++++++++++++++');\r",
+									"console.log('User login Tests total points = ' + points_login);\r",
+									"console.log('+++++++++++++++++++++++++++++++++++++++++');\r",
+									"pm.environment.set(\"points_login\", points_login);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n\t\"username\":  \"{{invalid_username}}\",\r\n\t\"password\": \"{{password}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{app_url}}/users/login",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "2 all users (10 pts)",
+			"item": [
+				{
+					"name": "1. all users 200 (9 pts)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let points = 0;\r",
+									"\r",
+									"pm.test(\"200 status code (0.25 pts)\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"    points += 0.25\r",
+									"});\r",
+									"\r",
+									"const respJSON = pm.response.json();\r",
+									"\r",
+									"pm.test(\"9 users(0.75 pts)\", function(){\r",
+									"    pm.expect(respJSON.length).to.equal(9);\r",
+									"    points += 0.75;\r",
+									"})\r",
+									"\r",
+									"pm.test(\"Each has 3 properties (2 pts)\", function(){\r",
+									"    pm.expect(respJSON.filter(x => Object.keys(x).length === 3).length).to.equal(9);\r",
+									"    pm.expect(respJSON.filter(x => Object.keys(x).includes('id')).length).to.equal(9);\r",
+									"    pm.expect(respJSON.filter(x => Object.keys(x).includes('role')).length).to.equal(9);\r",
+									"    pm.expect(respJSON.filter(x => Object.keys(x).includes('sub')).length).to.equal(9);\r",
+									"    points += 2;\r",
+									"})\r",
+									"\r",
+									"const admin = respJSON.filter((x) => x.role === 'admin')[0];\r",
+									"pm.test(\"sub value of admin in database matches sub in jwt (1 pts)\", function() {\r",
+									"    pm.expect(admin.sub).to.equal(pm.environment.get('admin1_sub'));\r",
+									"    pm.environment.set(\"admin1_id\", admin.id);\r",
+									"    points += 2;\r",
+									"})\r",
+									"\r",
+									"const instructors = respJSON.filter((x) => x.role === 'instructor');\r",
+									"pm.test(\"sub values of instructors in database matches sub in jwts (1 pts)\", function() {\r",
+									"    pm.expect(instructors.length).to.equal(2);\r",
+									"    for(let i = 1; i <= 2; i++){\r",
+									"        const instructor_i = instructors.filter(x => x.sub === pm.environment.get('instructor' + i + '_sub'))[0];\r",
+									"        pm.expect(instructor_i.sub).to.equal(pm.environment.get('instructor' + i + '_sub'));\r",
+									"        pm.environment.set('instructor' + i + '_id', instructor_i.id);\r",
+									"    } \r",
+									"    points += 2;\r",
+									"})\r",
+									"\r",
+									"const students = respJSON.filter((x) => x.role === 'student');\r",
+									"pm.test(\"sub values of students in database matches sub in jwts (1 pts)\", function() {\r",
+									"    pm.expect(students.length).to.equal(6);\r",
+									"    for(let i = 1; i <= 6; i++){\r",
+									"        const student_i = students.filter(x => x.sub === pm.environment.get('student' + i + '_sub'))[0];\r",
+									"        pm.expect(student_i.sub).to.equal(pm.environment.get('student' + i + '_sub'));\r",
+									"        pm.environment.set('student' + i + '_id', student_i.id);\r",
+									"    }  \r",
+									"    points += 2;\r",
+									"})\r",
+									"\r",
+									"console.log('******* All Users Test 1 points = ' + points);\r",
+									"pm.environment.set(\"points_all_users\", points);\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin1_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{app_url}}/users",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "2. all users 401 (0.5 pts)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let points = 0;\r",
+									"\r",
+									"pm.test(\"401 status code (0.25 pts)\", function () {\r",
+									"    pm.response.to.have.status(401);\r",
+									"    points += 0.25\r",
+									"});\r",
+									"\r",
+									"pm.test(\"403 error message (0.25 pts)\", function () {\r",
+									"     pm.expect(pm.response.json()[\"Error\"]).to.eq(\"Unauthorized\");\r",
+									"     points += 0.25\r",
+									"});\r",
+									"\r",
+									"\r",
+									"console.log('******* All Users Test 2 points = ' + points);\r",
+									"let points_all_users = pm.environment.get('points_all_users') + points;\r",
+									"console.log('******* All Users Tests Total points = ' + points_all_users);\r",
+									"pm.environment.set(\"points_all_users\", points_all_users);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{invalid_password}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{app_url}}/users",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "3. all users 403 (0.5 pts)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let points = 0;\r",
+									"\r",
+									"pm.test(\"403 status code (0.25 pts)\", function () {\r",
+									"    pm.response.to.have.status(403);\r",
+									"    points += 0.25\r",
+									"});\r",
+									"\r",
+									"pm.test(\"403 error message (0.25 pts)\", function () {\r",
+									"     pm.expect(pm.response.json()[\"Error\"]).to.eq(\"You don't have permission on this resource\");\r",
+									"     points += 0.25\r",
+									"});\r",
+									"\r",
+									"\r",
+									"console.log('******* All Users Test 3 points = ' + points);\r",
+									"let points_all_users = pm.environment.get('points_all_users') + points;\r",
+									"console.log('+++++++++++++++++++++++++++++++++++++++++');\r",
+									"console.log('All Users Tests Total points = ' + points_all_users);\r",
+									"console.log('+++++++++++++++++++++++++++++++++++++++++');\r",
+									"pm.environment.set(\"points_all_users\", points_all_users);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{instructor1_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{app_url}}/users",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "3a get a user - basic (4 pts)",
+			"item": [
+				{
+					"name": "1. get admin1 200 (1 pt)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let points = 0;\r",
+									"\r",
+									"pm.test(\"200 status code (0.25 pts)\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"    points += 0.25\r",
+									"});\r",
+									"\r",
+									"pm.test(\"admin user has either 3 or 4 properties (0.75 pts)\", function(){\r",
+									"    const respJSON = pm.response.json()\r",
+									"    pm.expect(Object.keys(respJSON).length).to.be.within(3,4);\r",
+									"    pm.expect(respJSON['id']).to.equal(pm.environment.get('admin1_id'));\r",
+									"    pm.expect(respJSON['sub']).to.equal(pm.environment.get('admin1_sub'));\r",
+									"    pm.expect(respJSON['role']).to.equal('admin');\r",
+									"    points += 0.75;\r",
+									"})\r",
+									"\r",
+									"\r",
+									"console.log('******* Get a user - basic Test 1 points = ' + points);\r",
+									"console.log('******* Get a user - basic Tests current points = ' + points);\r",
+									"pm.environment.set(\"points_user_basic\", points);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin1_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{app_url}}/users/{{admin1_id}}",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"users",
+								"{{admin1_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "2. get instructor1 200 (1 pt)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let points = 0;\r",
+									"\r",
+									"pm.test(\"200 status code (0.25 pts)\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"    points += 0.25\r",
+									"});\r",
+									"\r",
+									"pm.test(\"an instructor has either 4 or 5 properties (0.75 pts)\", function(){\r",
+									"    const respJSON = pm.response.json()\r",
+									"    pm.expect(Object.keys(respJSON).length).to.be.within(4,5)\r",
+									"    pm.expect(respJSON['id']).to.equal(pm.environment.get('instructor1_id'));\r",
+									"    pm.expect(respJSON['sub']).to.equal(pm.environment.get('instructor1_sub'));\r",
+									"    pm.expect(respJSON['role']).to.equal('instructor');\r",
+									"    pm.expect(Object.keys(respJSON).includes('courses')).to.be.true;\r",
+									"    points += 0.75;\r",
+									"})\r",
+									"\r",
+									"console.log('******* Get a user - basic Test 2 points = ' + points);\r",
+									"let points_user_basic = pm.environment.get('points_user_basic') + points;\r",
+									"console.log('******* Users - Basic Tests current points = ' + points_user_basic);\r",
+									"pm.environment.set(\"points_user_basic\", points_user_basic);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{instructor1_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{app_url}}/users/{{instructor1_id}}",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"users",
+								"{{instructor1_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "3. get student1 200 (1 pt)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let points = 0;\r",
+									"\r",
+									"pm.test(\"200 status code (0.25 pts)\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"    points += 0.25\r",
+									"});\r",
+									"\r",
+									"pm.test(\"a student has either 4 or 5 properties (0.75 pts)\", function(){\r",
+									"    const respJSON = pm.response.json()\r",
+									"    pm.expect(Object.keys(respJSON).length).to.be.within(4,5);\r",
+									"    pm.expect(respJSON['id']).to.equal(pm.environment.get('student1_id'));\r",
+									"    pm.expect(respJSON['sub']).to.equal(pm.environment.get('student1_sub'));\r",
+									"    pm.expect(respJSON['role']).to.equal('student');\r",
+									"    pm.expect(Object.keys(respJSON).includes('courses')).to.be.true;\r",
+									"    points += 0.75;\r",
+									"})\r",
+									"\r",
+									"console.log('******* Get a user - basic Test 3 points = ' + points);\r",
+									"let points_user_basic = pm.environment.get('points_user_basic') + points;\r",
+									"console.log('******* Users - Basic Tests current points = ' + points_user_basic);\r",
+									"pm.environment.set(\"points_user_basic\", points_user_basic);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{student1_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{app_url}}/users/{{student1_id}}",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"users",
+								"{{student1_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "4. get a user 401 (0.5 pt)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let points = 0;\r",
+									"\r",
+									"pm.test(\"401 status code (0.25 pts)\", function () {\r",
+									"    pm.response.to.have.status(401);\r",
+									"    points += 0.25\r",
+									"});\r",
+									"\r",
+									"pm.test(\"403 error message (0.25 pts)\", function () {\r",
+									"     pm.expect(pm.response.json()[\"Error\"]).to.eq(\"Unauthorized\");\r",
+									"     points += 0.25\r",
+									"});\r",
+									"\r",
+									"console.log('******* Get a user - basic Test 4 points = ' + points);\r",
+									"let points_user_basic = pm.environment.get('points_user_basic') + points;\r",
+									"console.log('******* Users - Basic Tests current points = ' + points_user_basic);\r",
+									"pm.environment.set(\"points_user_basic\", points_user_basic);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{invalid_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{app_url}}/users/{{student1_id}}",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"users",
+								"{{student1_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "5. get a user 403 (0.5 pt)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let points = 0;\r",
+									"\r",
+									"pm.test(\"403 status code (0.25 pts)\", function () {\r",
+									"    pm.response.to.have.status(403);\r",
+									"    points += 0.25\r",
+									"});\r",
+									"\r",
+									"pm.test(\"403 error message (0.25 pts)\", function () {\r",
+									"     pm.expect(pm.response.json()[\"Error\"]).to.eq(\"You don't have permission on this resource\");\r",
+									"     points += 0.25\r",
+									"});\r",
+									"\r",
+									"console.log('******* Get a user - basic Test 4 points = ' + points);\r",
+									"let points_user_basic = pm.environment.get('points_user_basic') + points;\r",
+									"console.log('+++++++++++++++++++++++++++++++++++++++++');\r",
+									"console.log('Users - Basic Tests Total points = ' + points_user_basic);\r",
+									"console.log('+++++++++++++++++++++++++++++++++++++++++');\r",
+									"pm.environment.set(\"points_user_basic\", points_user_basic);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{student2_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{app_url}}/users/{{student1_id}}",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"users",
+								"{{student1_id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "3b, 4 create avatar (1 + 3 pts)",
+			"item": [
+				{
+					"name": "1. create/update avatar student_1 200 (1 pts)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let points = 0;\r",
+									"\r",
+									"pm.test(\"200 status code (0.25 pts)\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"    points += 0.25\r",
+									"});\r",
+									"\r",
+									"pm.test(\"the response has the avatar_url (0.75 pts)\", function(){\r",
+									"    const respJSON = pm.response.json();\r",
+									"    pm.expect(Object.keys(respJSON).length).to.equal(1);\r",
+									"    pm.expect(respJSON['avatar_url']).to.equal(\r",
+									"        pm.environment.get('app_url') + '/users/' + \r",
+									"        pm.environment.get('student1_id') + '/avatar')\r",
+									"    points += 0.75;\r",
+									"})\r",
+									"\r",
+									"console.log('******* Avatar Create Test 1 points = ' + points);\r",
+									"pm.environment.set(\"points_avatar_create\", points);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{student1_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "//Users/erikgrinn/Documents/OSU CS Post-Bacc/CS 493/AWS/CS493/portfolio_project/images/student1.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{app_url}}/users/{{student1_id}}/avatar",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"users",
+								"{{student1_id}}",
+								"avatar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "2. student1 has avatar_url (1 pt)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let points = 0;\r",
+									"\r",
+									"pm.test(\"200 status code (0.25 pts)\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"    points += 0.25\r",
+									"});\r",
+									"\r",
+									"pm.test(\"student1 has an avatar URL (0.75 pts)\", function(){\r",
+									"    const respJSON = pm.response.json();    \r",
+									"    pm.expect(respJSON['avatar_url']).to.equal(\r",
+									"        pm.environment.get('app_url') + '/users/' + \r",
+									"        pm.environment.get('student1_id') + '/avatar');\r",
+									"    points += 0.75;\r",
+									"})\r",
+									"\r",
+									"\r",
+									"console.log('******* Get a user - avatar url Test 2 points = ' + points);\r",
+									"console.log('******* Get a user - avatar url Tests current points = ' + points);\r",
+									"pm.environment.set(\"points_user_avatar_url\", points);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{student1_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{app_url}}/users/{{student1_id}}",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"users",
+								"{{student1_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "3. update avatar student_1 200 (1 pts)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let points = 0;\r",
+									"\r",
+									"pm.test(\"200 status code (0.25 pts)\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"    points += 0.25\r",
+									"});\r",
+									"\r",
+									"pm.test(\"the response has the avatar_url (0.75 pts)\", function(){\r",
+									"    const respJSON = pm.response.json();\r",
+									"    pm.expect(Object.keys(respJSON).length).to.equal(1);\r",
+									"    pm.expect(respJSON['avatar_url']).to.equal(\r",
+									"        pm.environment.get('app_url') + '/users/' + \r",
+									"        pm.environment.get('student1_id') + '/avatar')\r",
+									"    points += 0.75;\r",
+									"})\r",
+									"\r",
+									"console.log('******* Avatar Create Test 3 points = ' + points);\r",
+									"let points_avatar_create = pm.environment.get('points_avatar_create') + points;\r",
+									"console.log('******* Avatar Create Tests current points = ' + points_avatar_create);\r",
+									"pm.environment.set(\"points_avatar_create\", points_avatar_create);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{student1_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/Users/erikgrinn/Documents/OSU CS Post-Bacc/CS 493/AWS/CS493/portfolio_project/images/student1.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{app_url}}/users/{{student1_id}}/avatar",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"users",
+								"{{student1_id}}",
+								"avatar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "4. post avatar 400 (0.25 pt)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let points = 0;\r",
+									"\r",
+									"pm.test(\"400 status code (0.15 pts)\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"    points += 0.15\r",
+									"});\r",
+									"\r",
+									"pm.test(\"error message is correct (0.10 pts)\", function(){\r",
+									"    const respJSON = pm.response.json();\r",
+									"    pm.expect(Object.keys(respJSON).length).to.equal(1);\r",
+									"    pm.expect(respJSON[\"Error\"]).to.equal(\"The request body is invalid\")\r",
+									"    points += 0.10;\r",
+									"})\r",
+									"\r",
+									"console.log('******* Avatar Create Test 4 points = ' + points);\r",
+									"let points_avatar_create = pm.environment.get('points_avatar_create') + points;\r",
+									"console.log('******* Avatar Create Tests current points = ' + points_avatar_create);\r",
+									"pm.environment.set(\"points_avatar_create\", points_avatar_create);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{student1_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file_name",
+									"type": "file",
+									"src": "/Users/erikgrinn/Documents/OSU CS Post-Bacc/CS 493/AWS/CS493/portfolio_project/images/student1.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{app_url}}/users/{{student1_id}}/avatar",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"users",
+								"{{student1_id}}",
+								"avatar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "5. post avatar 401 (0.25 pt)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let points = 0;\r",
+									"\r",
+									"pm.test(\"401 status code (0.15 pts)\", function () {\r",
+									"    pm.response.to.have.status(401);\r",
+									"    points += 0.15\r",
+									"});\r",
+									"\r",
+									"pm.test(\"error message is correct (0.1 pts)\", function(){\r",
+									"    const respJSON = pm.response.json();\r",
+									"    pm.expect(Object.keys(respJSON).length).to.equal(1);\r",
+									"    pm.expect(respJSON[\"Error\"]).to.equal(\"Unauthorized\")\r",
+									"    points += 0.1;\r",
+									"})\r",
+									"\r",
+									"\r",
+									"console.log('******* Avatar Create Test 5 points = ' + points);\r",
+									"let points_avatar_create = pm.environment.get('points_avatar_create') + points;\r",
+									"console.log('******* Avatar Create Tests current points = ' + points_avatar_create);\r",
+									"pm.environment.set(\"points_avatar_create\", points_avatar_create);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{invalid_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "'/Users/erikgrinn/Documents/OSU CS Post-Bacc/CS 493/AWS/CS493/portfolio_project/images/student1.png'"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{app_url}}/users/{{student1_id}}/avatar",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"users",
+								"{{student1_id}}",
+								"avatar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "6. post avatar 403 (0.5 pt)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let points = 0;\r",
+									"\r",
+									"pm.test(\"403 status code (0.25 pts)\", function () {\r",
+									"    pm.response.to.have.status(403);\r",
+									"    points += 0.25\r",
+									"});\r",
+									"\r",
+									"pm.test(\"error message is correct (0.25 pts)\", function(){\r",
+									"    const respJSON = pm.response.json();\r",
+									"    pm.expect(Object.keys(respJSON).length).to.equal(1);\r",
+									"    pm.expect(respJSON['Error']).to.equal(\"You don't have permission on this resource\")\r",
+									"    points += 0.25;\r",
+									"})\r",
+									"\r",
+									"\r",
+									"console.log('******* Avatar Create Test 6 points = ' + points);\r",
+									"let points_avatar_create = pm.environment.get('points_avatar_create') + points;\r",
+									"console.log('+++++++++++++++++++++++++++++++++++++++++');\r",
+									"console.log('Avatar Create Tests Total points = ' + points_avatar_create);\r",
+									"console.log('+++++++++++++++++++++++++++++++++++++++++');\r",
+									"pm.environment.set(\"points_avatar_create\", points_avatar_create);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin1_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/Users/erikgrinn/Documents/AWS/CS493/portfolio_project/images/student1.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{app_url}}/users/{{student1_id}}/avatar",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"users",
+								"{{student1_id}}",
+								"avatar"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "5. get user's avatar (1.75 + 2.25 pts)",
+			"item": [
+				{
+					"name": "1. get avatar 200 (0.25 + 2.25 pt)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let points = 0;\r",
+									"\r",
+									"pm.test(\"200 status code (0.25 pts)\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"    points += 0.25\r",
+									"});\r",
+									"\r",
+									"// NOTE: The remaining 2.25 points will be based on verifying that the file was in the response\r",
+									"\r",
+									"console.log('******* Avatar Get Test 1 points = ' + points);\r",
+									"console.log('******* Avatar Get Tests current points = ' + points);\r",
+									"pm.environment.set(\"points_avatar_get\", points);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{student1_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{app_url}}/users/{{student1_id}}/avatar",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"users",
+								"{{student1_id}}",
+								"avatar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "2. get avatar 401 (0.5 pt)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let points = 0;\r",
+									"\r",
+									"pm.test(\"401 status code (0.25 pts)\", function () {\r",
+									"    pm.response.to.have.status(401);\r",
+									"    points += 0.25\r",
+									"});\r",
+									"\r",
+									"pm.test(\"error message is correct (0.25 pts)\", function(){\r",
+									"    const respJSON = pm.response.json();\r",
+									"    pm.expect(Object.keys(respJSON).length).to.equal(1);\r",
+									"    pm.expect(respJSON[\"Error\"]).to.equal(\"Unauthorized\")\r",
+									"    points += 0.25;\r",
+									"})\r",
+									"\r",
+									"\r",
+									"console.log('******* Avatar Get Test 2 points = ' + points);\r",
+									"let points_avatar_get = pm.environment.get('points_avatar_get') + points;\r",
+									"console.log('******* Avatar Get Tests current points = ' + points_avatar_get);\r",
+									"pm.environment.set(\"points_avatar_get\", points_avatar_get);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{invalid_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{app_url}}/users/{{student1_id}}/avatar",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"users",
+								"{{student1_id}}",
+								"avatar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "3. get avatar 403 (0.5 pt)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let points = 0;\r",
+									"\r",
+									"pm.test(\"403 status code (0.25 pts)\", function () {\r",
+									"    pm.response.to.have.status(403);\r",
+									"    points += 0.25\r",
+									"});\r",
+									"\r",
+									"pm.test(\"error message is correct (0.25 pts)\", function(){\r",
+									"    const respJSON = pm.response.json();\r",
+									"    pm.expect(Object.keys(respJSON).length).to.equal(1);\r",
+									"    pm.expect(respJSON['Error']).to.equal(\"You don't have permission on this resource\")\r",
+									"    points += 0.25;\r",
+									"})\r",
+									"\r",
+									"\r",
+									"console.log('******* Avatar Get Test 3 points = ' + points);\r",
+									"let points_avatar_get = pm.environment.get('points_avatar_get') + points;\r",
+									"console.log('******* Avatar Get Tests current points = ' + points_avatar_get);\r",
+									"pm.environment.set(\"points_avatar_get\", points_avatar_get);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin1_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{app_url}}/users/{{student1_id}}/avatar",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"users",
+								"{{student1_id}}",
+								"avatar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "4. get avatar 404 (0.5 pt)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let points = 0;\r",
+									"\r",
+									"pm.test(\"404 status code (0.25 pts)\", function () {\r",
+									"    pm.response.to.have.status(404);\r",
+									"    points += 0.25\r",
+									"});\r",
+									"\r",
+									"pm.test(\"error message is correct (0.25 pts)\", function(){\r",
+									"    const respJSON = pm.response.json();\r",
+									"    pm.expect(Object.keys(respJSON).length).to.equal(1);\r",
+									"    pm.expect(respJSON['Error']).to.equal(\"Not found\")\r",
+									"    points += 0.25;\r",
+									"})\r",
+									"\r",
+									"\r",
+									"console.log('******* Avatar Get Test 4 points = ' + points);\r",
+									"let points_avatar_get = pm.environment.get('points_avatar_get') + points;\r",
+									"console.log('+++++++++++++++++++++++++++++++++++++++++');\r",
+									"console.log('Avatar Get Tests Total points = ' + points_avatar_get);\r",
+									"console.log('+++++++++++++++++++++++++++++++++++++++++');\r",
+									"pm.environment.set(\"points_avatar_get\", points_avatar_get);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{instructor2_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{app_url}}/users/{{instructor2_id}}/avatar",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"users",
+								"{{instructor2_id}}",
+								"avatar"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "3b, 6 delete avatar (1 + 3 pts)",
+			"item": [
+				{
+					"name": "1. delete avatar 401 (0.5 pt)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let points = 0;\r",
+									"\r",
+									"pm.test(\"401 status code (0.25 pts)\", function () {\r",
+									"    pm.response.to.have.status(401);\r",
+									"    points += 0.25\r",
+									"});\r",
+									"\r",
+									"pm.test(\"error message is correct (0.25 pts)\", function(){\r",
+									"    const respJSON = pm.response.json();\r",
+									"    pm.expect(Object.keys(respJSON).length).to.equal(1);\r",
+									"    pm.expect(respJSON[\"Error\"]).to.equal(\"Unauthorized\")\r",
+									"    points += 0.25;\r",
+									"})\r",
+									"\r",
+									"\r",
+									"console.log('******* Avatar Delete Test 1 points = ' + points);\r",
+									"console.log('******* Avatar Delete Tests current points = ' + points);\r",
+									"pm.environment.set(\"points_avatar_delete\", points);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{invalid_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{app_url}}/users/{{student1_id}}/avatar",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"users",
+								"{{student1_id}}",
+								"avatar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "2. delete avatar 204 (1 pt)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let points = 0;\r",
+									"\r",
+									"pm.test(\"204 status code (1 pts)\", function () {\r",
+									"    pm.response.to.have.status(204);\r",
+									"    points += 1\r",
+									"});\r",
+									"\r",
+									"console.log('******* Avatar Delete Test 2 points = ' + points);\r",
+									"let points_avatar_delete = pm.environment.get('points_avatar_delete') + points;\r",
+									"console.log('******* Avatar Delete Tests current points = ' + points_avatar_delete);\r",
+									"pm.environment.set(\"points_avatar_delete\", points_avatar_delete);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{student1_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{app_url}}/users/{{student1_id}}/avatar",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"users",
+								"{{student1_id}}",
+								"avatar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "3. student1 no avatar_url (1 pt)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let points = 0;\r",
+									"\r",
+									"pm.test(\"200 status code (0.25 pts)\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"    points += 0.25\r",
+									"});\r",
+									"\r",
+									"pm.test(\"student1 no longer has an avatar URL (0.75 pts)\", function(){\r",
+									"    const respJSON = pm.response.json();\r",
+									"    pm.expect(Object.keys(respJSON).includes('avatar_url')).to.be.false;\r",
+									"    points += 0.75;\r",
+									"})\r",
+									"\r",
+									"\r",
+									"console.log('******* Get a user - avatar url Test 2 points = ' + points);\r",
+									"let points_user_avatar_url = pm.environment.get(\"points_user_avatar_url\") + points;\r",
+									"console.log('+++++++++++++++++++++++++++++++++++++++++');\r",
+									"console.log('Get a user - avatar url Tests Total points = ' + points_user_avatar_url);\r",
+									"console.log('+++++++++++++++++++++++++++++++++++++++++');\r",
+									"pm.environment.set(\"points_user_avatar_url\", points_user_avatar_url);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{student1_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{app_url}}/users/{{student1_id}}",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"users",
+								"{{student1_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "4. delete avatar 403 (0.5 pt)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let points = 0;\r",
+									"\r",
+									"pm.test(\"403 status code (0.25 pts)\", function () {\r",
+									"    pm.response.to.have.status(403);\r",
+									"    points += 0.25\r",
+									"});\r",
+									"\r",
+									"pm.test(\"error message is correct (0.25 pts)\", function(){\r",
+									"    const respJSON = pm.response.json();\r",
+									"    pm.expect(Object.keys(respJSON).length).to.equal(1);\r",
+									"    pm.expect(respJSON['Error']).to.equal(\"You don't have permission on this resource\")\r",
+									"    points += 0.25;\r",
+									"})\r",
+									"\r",
+									"\r",
+									"console.log('******* Avatar Delete Test 4 points = ' + points);\r",
+									"let points_avatar_delete = pm.environment.get('points_avatar_delete') + points;\r",
+									"console.log('******* Avatar Delete Tests current points = ' + points_avatar_delete);\r",
+									"pm.environment.set(\"points_avatar_delete\", points_avatar_delete);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin1_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{app_url}}/users/{{student1_id}}/avatar",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"users",
+								"{{student1_id}}",
+								"avatar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "5. delete avatar 404 (1 pt)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let points = 0;\r",
+									"\r",
+									"pm.test(\"404 status code (0.5 pts)\", function () {\r",
+									"    pm.response.to.have.status(404);\r",
+									"    points += 0.5\r",
+									"});\r",
+									"\r",
+									"pm.test(\"error message is correct (0.5 pts)\", function(){\r",
+									"    const respJSON = pm.response.json();\r",
+									"    pm.expect(Object.keys(respJSON).length).to.equal(1);\r",
+									"    pm.expect(respJSON['Error']).to.equal(\"Not found\")\r",
+									"    points += 0.5;\r",
+									"})\r",
+									"\r",
+									"\r",
+									"console.log('******* Avatar Delete Test 5 points = ' + points);\r",
+									"let points_avatar_delete = pm.environment.get('points_avatar_delete') + points;\r",
+									"console.log('+++++++++++++++++++++++++++++++++++++++++');\r",
+									"console.log('Avatar Delete Tests Total points = ' + points_avatar_delete);\r",
+									"console.log('+++++++++++++++++++++++++++++++++++++++++');\r",
+									"pm.environment.set(\"points_avatar_delete\", points_avatar_delete);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{student1_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{app_url}}/users/{{student1_id}}/avatar",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"users",
+								"{{student1_id}}",
+								"avatar"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "7. create a course (10 pts)",
+			"item": [
+				{
+					"name": "1. create 1st course (2 pt)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.environment.set(\"course1_id\", pm.response.json()[\"id\"]);\r",
+									"\r",
+									"let points = 0; \r",
+									"\r",
+									"pm.test(\"status code is 201 (0.25 pts)\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"    points += 0.25\r",
+									"});\r",
+									"\r",
+									"pm.test(\"content is valid (1.5 pts)\", function () {\r",
+									"    const respJSON = pm.response.json();\r",
+									"    pm.expect(pm.response.json()[\"subject\"]).to.eq(\"CS\");\r",
+									"    pm.expect(pm.response.json()[\"number\"]).to.eq(493);\r",
+									"    pm.expect(pm.response.json()[\"title\"]).to.eq(\"Cloud Application Development\");\r",
+									"    pm.expect(pm.response.json()[\"term\"]).to.eq(\"fall-24\");\r",
+									"    pm.expect(pm.response.json()[\"instructor_id\"]).to.eq(pm.environment.get('instructor1_id'));\r",
+									"    points += 1.5\r",
+									"});\r",
+									"\r",
+									"pm.test(\"self URL is valid (0.25 pts)\", function () {\r",
+									"    const respJSON = pm.response.json();\r",
+									"    pm.expect(respJSON[\"self\"]).to.eq(\r",
+									"        pm.environment.get(\"app_url\") + '/courses/' + respJSON[\"id\"]);\r",
+									"    points += 0.25\r",
+									"});\r",
+									"\r",
+									"\r",
+									"console.log('******* Create a course Test 1 points = ' + points);\r",
+									"console.log('******* Create a course Tests current points = ' + points);\r",
+									"pm.environment.set(\"points_course_create\", points);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin1_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"subject\": \"CS\",\r\n  \"number\": 493,\r\n  \"title\": \"Cloud Application Development\",\r\n  \"term\": \"fall-24\",\r\n  \"instructor_id\": {{instructor1_id}}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{app_url}}/courses",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"courses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "2. create course 400 missing prop (1 pt)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let points = 0;\r",
+									"\r",
+									"pm.test(\"400 status code (0.5 pts)\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"    points += 0.5\r",
+									"});\r",
+									"\r",
+									"pm.test(\"400 error message (0.25 pts)\", function () {\r",
+									"     pm.expect(pm.response.json()[\"Error\"]).to.eq(\"The request body is invalid\");\r",
+									"     points += 0.25\r",
+									"});\r",
+									"\r",
+									"pm.test(\"The response content type is application.json (0.25 pts)\", function(){\r",
+									"    pm.expect(pm.response.contentInfo().contentType).to.eq('application/json');\r",
+									"    points += 0.25\r",
+									"});\r",
+									"\r",
+									"console.log('******* Create a course Test 2 points = ' + points);\r",
+									"let points_course_create = pm.environment.get('points_course_create') + points;\r",
+									"console.log('******* Create a course Tests current points = ' + points_course_create);\r",
+									"pm.environment.set(\"points_course_create\", points_course_create);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin1_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"subject\": \"CS\",\r\n  \"number\": 493,\r\n  \"title\": \"Cloud Application Development\",\r\n  \"instructor_id\": {{instructor1_id}}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{app_url}}/courses",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"courses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "3. create course 400 invalid instructor (2 pt)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let points = 0;\r",
+									"\r",
+									"pm.test(\"400 status code (1.5 pts)\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"    points += 1.5\r",
+									"});\r",
+									"\r",
+									"pm.test(\"400 error message (0.25 pts)\", function () {\r",
+									"     pm.expect(pm.response.json()[\"Error\"]).to.eq(\"The request body is invalid\");\r",
+									"     points += 0.25\r",
+									"});\r",
+									"\r",
+									"pm.test(\"The response content type is application.json (0.25 pts)\", function(){\r",
+									"    pm.expect(pm.response.contentInfo().contentType).to.eq('application/json');\r",
+									"    points += 0.25\r",
+									"});\r",
+									"\r",
+									"console.log('******* Create a course Test 3 points = ' + points);\r",
+									"let points_course_create = pm.environment.get('points_course_create') + points;\r",
+									"console.log('******* Create a course Tests current points = ' + points_course_create);\r",
+									"pm.environment.set(\"points_course_create\", points_course_create);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin1_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"subject\": \"CS\",\r\n  \"number\": 493,\r\n  \"title\": \"Cloud Application Development\",\r\n  \"term\": \"fall-24\",\r\n  \"instructor_id\": {{student1_id}}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{app_url}}/courses",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"courses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "4. create course 401 (1 pt)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let points = 0;\r",
+									"\r",
+									"pm.test(\"401 status code (0.5 pts)\", function () {\r",
+									"    pm.response.to.have.status(401);\r",
+									"    points += 0.5\r",
+									"});\r",
+									"\r",
+									"pm.test(\"401 error message (0.5 pts)\", function () {\r",
+									"     pm.expect(pm.response.json()[\"Error\"]).to.eq(\"Unauthorized\");\r",
+									"     points += 0.5\r",
+									"});\r",
+									"\r",
+									"console.log('******* Create a course Test 4 points = ' + points);\r",
+									"let points_course_create = pm.environment.get('points_course_create') + points;\r",
+									"console.log('******* Create a course Tests current points = ' + points_course_create);\r",
+									"pm.environment.set(\"points_course_create\", points_course_create);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{invalid_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"subject\": \"CS\",\r\n  \"number\": 493,\r\n  \"title\": \"Cloud Application Development\",\r\n  \"instructor_id\": {{instructor1_id}}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{app_url}}/courses",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"courses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "5. create course 403 (1 pt)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let points = 0;\r",
+									"\r",
+									"pm.test(\"403 status code (0.5 pts)\", function () {\r",
+									"    pm.response.to.have.status(403);\r",
+									"    points += 0.5\r",
+									"});\r",
+									"\r",
+									"pm.test(\"403 error message (0.5 pts)\", function () {\r",
+									"     pm.expect(pm.response.json()[\"Error\"]).to.eq(\"You don't have permission on this resource\");\r",
+									"     points += 0.5\r",
+									"});\r",
+									"\r",
+									"console.log('******* Create a course Test 5 points = ' + points);\r",
+									"let points_course_create = pm.environment.get('points_course_create') + points;\r",
+									"console.log('******* Create a course Tests current points = ' + points_course_create);\r",
+									"pm.environment.set(\"points_course_create\", points_course_create);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{instructor1_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"subject\": \"CS\",\r\n  \"number\": 493,\r\n  \"title\": \"Cloud Application Development\",\r\n  \"term\": \"fall-24\",\r\n  \"instructor_id\": {{instructor1_id}}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{app_url}}/courses",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"courses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "6. create 2nd course (1 pts)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.environment.set(\"course2_id\", pm.response.json()[\"id\"]);\r",
+									"\r",
+									"let points = 0;\r",
+									"\r",
+									"pm.test(\"status code is 201 (0.1 pts)\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"    points += 0.1\r",
+									"});\r",
+									"\r",
+									"pm.test(\"content is valid (0.8 pts)\", function () {\r",
+									"    const respJSON = pm.response.json();\r",
+									"    pm.expect(pm.response.json()[\"subject\"]).to.eq(\"CS\");\r",
+									"    pm.expect(pm.response.json()[\"number\"]).to.eq(492);\r",
+									"    pm.expect(pm.response.json()[\"title\"]).to.eq(\"Mobile App Development\");\r",
+									"    pm.expect(pm.response.json()[\"term\"]).to.eq(\"fall-24\");\r",
+									"    pm.expect(pm.response.json()[\"instructor_id\"]).to.eq(pm.environment.get('instructor1_id'));\r",
+									"    points += 0.8\r",
+									"});\r",
+									"\r",
+									"pm.test(\"self URL is valid (0.1 pts)\", function () {\r",
+									"    const respJSON = pm.response.json();\r",
+									"    pm.expect(respJSON[\"self\"]).to.eq(\r",
+									"        pm.environment.get(\"app_url\") + '/courses/' + respJSON[\"id\"]);\r",
+									"    points += 0.1\r",
+									"});\r",
+									"\r",
+									"console.log('******* Create a course Test 6 points = ' + points);\r",
+									"let points_course_create = pm.environment.get('points_course_create') + points;\r",
+									"console.log('******* Create a course Tests current points = ' + points_course_create);\r",
+									"pm.environment.set(\"points_course_create\", points_course_create);\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin1_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"subject\": \"CS\",\r\n  \"number\": 492,\r\n  \"title\": \"Mobile App Development\",\r\n  \"term\": \"fall-24\",\r\n  \"instructor_id\": {{instructor1_id}}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{app_url}}/courses",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"courses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "7. create 3rd course (1 pts)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.environment.set(\"course3_id\", pm.response.json()[\"id\"]);\r",
+									"\r",
+									"let points = 0;\r",
+									"\r",
+									"pm.test(\"status code is 201 (0.1 pts)\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"    points += 0.1\r",
+									"});\r",
+									"\r",
+									"pm.test(\"content is valid (0.8 pts)\", function () {\r",
+									"    const respJSON = pm.response.json();\r",
+									"    pm.expect(pm.response.json()[\"subject\"]).to.eq(\"ECE\");\r",
+									"    pm.expect(pm.response.json()[\"number\"]).to.eq(271);\r",
+									"    pm.expect(pm.response.json()[\"title\"]).to.eq(\"Digital Logic Design\");\r",
+									"    pm.expect(pm.response.json()[\"term\"]).to.eq(\"fall-24\");\r",
+									"    pm.expect(pm.response.json()[\"instructor_id\"]).to.eq(pm.environment.get('instructor1_id'));\r",
+									"    points += 0.8\r",
+									"});\r",
+									"\r",
+									"pm.test(\"self URL is valid (0.1 pts)\", function () {\r",
+									"    const respJSON = pm.response.json();\r",
+									"    pm.expect(respJSON[\"self\"]).to.eq(\r",
+									"        pm.environment.get(\"app_url\") + '/courses/' + respJSON[\"id\"]);\r",
+									"    points += 0.1\r",
+									"});\r",
+									"\r",
+									"console.log('******* Create a course Test 7 points = ' + points);\r",
+									"let points_course_create = pm.environment.get('points_course_create') + points;\r",
+									"console.log('******* Create a course Tests current points = ' + points_course_create);\r",
+									"pm.environment.set(\"points_course_create\", points_course_create);\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin1_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"subject\": \"ECE\",\r\n  \"number\": 271,\r\n  \"title\": \"Digital Logic Design\",\r\n  \"term\": \"fall-24\",\r\n  \"instructor_id\": {{instructor1_id}}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{app_url}}/courses",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"courses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "8. create 4th course (1 pts)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.environment.set(\"course4_id\", pm.response.json()[\"id\"]);\r",
+									"\r",
+									"let points = 0;\r",
+									"\r",
+									"pm.test(\"status code is 201 (0.1 pts)\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"    points += 0.1\r",
+									"});\r",
+									"\r",
+									"pm.test(\"content is valid (0.8 pts)\", function () {\r",
+									"    const respJSON = pm.response.json();\r",
+									"    pm.expect(pm.response.json()[\"subject\"]).to.eq(\"AI\");\r",
+									"    pm.expect(pm.response.json()[\"number\"]).to.eq(534);\r",
+									"    pm.expect(pm.response.json()[\"title\"]).to.eq(\"Machine Learning\");\r",
+									"    pm.expect(pm.response.json()[\"term\"]).to.eq(\"fall-24\");\r",
+									"    pm.expect(pm.response.json()[\"instructor_id\"]).to.eq(pm.environment.get('instructor2_id'));\r",
+									"    points += 0.8\r",
+									"});\r",
+									"\r",
+									"pm.test(\"self URL is valid (0.1 pts)\", function () {\r",
+									"    const respJSON = pm.response.json();\r",
+									"    pm.expect(respJSON[\"self\"]).to.eq(\r",
+									"        pm.environment.get(\"app_url\") + '/courses/' + respJSON[\"id\"]);\r",
+									"    points += 0.1\r",
+									"});\r",
+									"\r",
+									"console.log('******* Create a course Test 8 points = ' + points);\r",
+									"let points_course_create = pm.environment.get('points_course_create') + points;\r",
+									"console.log('+++++++++++++++++++++++++++++++++++++++++');\r",
+									"console.log('Create a course Tests Total points = ' + points_course_create);\r",
+									"console.log('+++++++++++++++++++++++++++++++++++++++++');\r",
+									"pm.environment.set(\"points_course_create\", points_course_create);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin1_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"subject\": \"AI\",\r\n  \"number\": 534,\r\n  \"title\": \"Machine Learning\",\r\n  \"term\": \"fall-24\",\r\n  \"instructor_id\": {{instructor2_id}}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{app_url}}/courses",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"courses"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "8. get all courses (10 pts)",
+			"item": [
+				{
+					"name": "1. get courses page 1 (7.5 pts)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let points = 0;\r",
+									"\r",
+									"pm.test(\"200 status code\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"    points += 0.25;\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"The response content type is application.json\", function(){\r",
+									"    pm.expect(pm.response.contentInfo().contentType).to.eq('application/json');\r",
+									"    points += 0.25;\r",
+									"});\r",
+									"\r",
+									"const respJSON = pm.response.json();\r",
+									"\r",
+									"pm.test(\"Exactly 3 courses on the page\", function(){\r",
+									"   pm.expect(respJSON['courses'].length).to.eq(3);\r",
+									"   points += 1;\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Every course has all the required properties\", function(){\r",
+									"    const courses = respJSON['courses'];\r",
+									"    for (const course of courses){\r",
+									"        pm.expect(course).to.have.property(\"id\");\r",
+									"        pm.expect(course).to.have.property(\"subject\");\r",
+									"        pm.expect(course).to.have.property(\"number\");        \r",
+									"        pm.expect(course).to.have.property(\"title\");\r",
+									"        pm.expect(course).to.have.property(\"term\");\r",
+									"        pm.expect(course).to.have.property(\"instructor_id\");\r",
+									"        pm.expect(course[\"self\"]).to.eq(\r",
+									"            pm.environment.get(\"app_url\") + '/courses/' + course[\"id\"]);\r",
+									"    }\r",
+									"   points += 1;\r",
+									"});\r",
+									"\r",
+									"pm.test(\"The next link is correct\", function(){\r",
+									"    pm.expect(respJSON['next']).to.be.oneOf([\r",
+									"            pm.environment.get(\"app_url\") + '/courses?offset=3&limit=3',\r",
+									"            pm.environment.get(\"app_url\") + '/courses?limit=3&offset=3']);\r",
+									"    points += 2.5;\r",
+									"});\r",
+									"\r",
+									"pm.test(\"The courses are sorted by subject\", function(){\r",
+									"    const courses = respJSON['courses'];\r",
+									"    const subjects = courses.map(x => x['subject']);\r",
+									"    console.log(subjects)\r",
+									"    let isSorted = true;\r",
+									"    for(let i = 0; i < subjects.length -1; i++){\r",
+									"        if(subjects[i] > subjects[i+1]){\r",
+									"            isSorted = false;\r",
+									"            break;\r",
+									"        }\r",
+									"    }\r",
+									"    pm.expect(isSorted).to.be.true;\r",
+									"    points += 2.5;\r",
+									"});\r",
+									"\r",
+									"console.log('******* Get all courses Test 1 points = ' + points);\r",
+									"console.log('******* Get all courses Tests current points = ' + points);\r",
+									"pm.environment.set(\"points_courses_get_all\", points);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{app_url}}/courses",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"courses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "2. get courses 2nd page (2.5 pts)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let points = 0;\r",
+									"\r",
+									"pm.test(\"200 status code\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"    points += 0.25;\r",
+									"});\r",
+									"\r",
+									"pm.test(\"The response content type is application.json\", function(){\r",
+									"    pm.expect(pm.response.contentInfo().contentType).to.eq('application/json');\r",
+									"    points += 0.25;\r",
+									"});\r",
+									"\r",
+									"pm.test(\"At least 1 course on the page\", function(){\r",
+									"   pm.expect(pm.response.json()['courses'].length).to.be.at.least(1);\r",
+									"   points += 1;\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Every course has all the required properties\", function(){\r",
+									"    const courses = pm.response.json()['courses'];\r",
+									"    for (const course of courses){\r",
+									"        pm.expect(course).to.have.property(\"id\");\r",
+									"        pm.expect(course).to.have.property(\"subject\");\r",
+									"        pm.expect(course).to.have.property(\"number\");        \r",
+									"        pm.expect(course).to.have.property(\"title\");\r",
+									"        pm.expect(course).to.have.property(\"term\");\r",
+									"        pm.expect(course).to.have.property(\"instructor_id\");\r",
+									"        pm.expect(course[\"self\"]).to.eq(\r",
+									"            pm.environment.get(\"app_url\") + '/courses/' + course[\"id\"]);\r",
+									"    }\r",
+									"   points += 1;\r",
+									"});\r",
+									"\r",
+									"console.log('******* Get all courses Test 2 points = ' + points);\r",
+									"let points_courses_get_all = pm.environment.get('points_courses_get_all') + points;\r",
+									"console.log('+++++++++++++++++++++++++++++++++++++++++');\r",
+									"console.log('Get all courses Tests Total points = ' + points_courses_get_all);\r",
+									"console.log('+++++++++++++++++++++++++++++++++++++++++');\r",
+									"pm.environment.set(\"points_courses_get_all\", points_courses_get_all);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{app_url}}/courses?offset=3&limit=3",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"courses"
+							],
+							"query": [
+								{
+									"key": "offset",
+									"value": "3"
+								},
+								{
+									"key": "limit",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "9. get a course (5 pts)",
+			"item": [
+				{
+					"name": "1. get course 1 200 (1 pts)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let points = 0; \r",
+									"\r",
+									"pm.test(\"status code is 200 (0.05 pts)\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"    points += 0.05\r",
+									"});\r",
+									"\r",
+									"pm.test(\"content is valid (0.75 pts)\", function () {\r",
+									"    const respJSON = pm.response.json();\r",
+									"    pm.expect(pm.response.json()[\"subject\"]).to.eq(\"CS\");\r",
+									"    pm.expect(pm.response.json()[\"number\"]).to.eq(493);\r",
+									"    pm.expect(pm.response.json()[\"title\"]).to.eq(\"Cloud Application Development\");\r",
+									"    pm.expect(pm.response.json()[\"term\"]).to.eq(\"fall-24\");\r",
+									"    pm.expect(pm.response.json()[\"instructor_id\"]).to.eq(pm.environment.get('instructor1_id'));\r",
+									"    points += 0.75\r",
+									"});\r",
+									"\r",
+									"pm.test(\"self URL is valid (0.15 pts)\", function () {\r",
+									"    const respJSON = pm.response.json();\r",
+									"    pm.expect(respJSON[\"self\"]).to.eq(\r",
+									"        pm.environment.get(\"app_url\") + '/courses/' + respJSON[\"id\"]);\r",
+									"    points += 0.15\r",
+									"});\r",
+									"\r",
+									"pm.test(\"The response content type is application.json (0.05 pts)\", function(){\r",
+									"    pm.expect(pm.response.contentInfo().contentType).to.eq('application/json');\r",
+									"    points += 0.05\r",
+									"});\r",
+									"\r",
+									"console.log('******* Get a course Test 1 points = ' + points);\r",
+									"console.log('******* Get a course Tests current points = ' + points);\r",
+									"pm.environment.set(\"points_course_get\", points);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{app_url}}/courses/{{course1_id}}",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"courses",
+								"{{course1_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "2. get course 2 200 (1 pts)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let points = 0; \r",
+									"\r",
+									"\r",
+									"pm.test(\"content is valid (0.75 pts)\", function () {\r",
+									"    const respJSON = pm.response.json();\r",
+									"    pm.expect(pm.response.json()[\"subject\"]).to.eq(\"CS\");\r",
+									"    pm.expect(pm.response.json()[\"number\"]).to.eq(492);\r",
+									"    pm.expect(pm.response.json()[\"title\"]).to.eq(\"Mobile App Development\");\r",
+									"    pm.expect(pm.response.json()[\"term\"]).to.eq(\"fall-24\");\r",
+									"    pm.expect(pm.response.json()[\"instructor_id\"]).to.eq(pm.environment.get('instructor1_id'));\r",
+									"    points += 0.75\r",
+									"});\r",
+									"\r",
+									"pm.test(\"self URL is valid (0.25 pts)\", function () {\r",
+									"    const respJSON = pm.response.json();\r",
+									"    pm.expect(respJSON[\"self\"]).to.eq(\r",
+									"        pm.environment.get(\"app_url\") + '/courses/' + respJSON[\"id\"]);\r",
+									"    points += 0.25\r",
+									"});\r",
+									"\r",
+									"console.log('******* Get a course Test 4 points = ' + points);\r",
+									"let points_course_get = pm.environment.get('points_course_get') + points;\r",
+									"console.log('******* Get a course Tests current points = ' + points_course_get);\r",
+									"pm.environment.set(\"points_course_get\", points_course_get);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{app_url}}/courses/{{course2_id}}",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"courses",
+								"{{course2_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "3. get course 3 200 (1 pts)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let points = 0; \r",
+									"\r",
+									"\r",
+									"pm.test(\"content is valid (0.75 pts)\", function () {\r",
+									"    const respJSON = pm.response.json();\r",
+									"    pm.expect(pm.response.json()[\"subject\"]).to.eq(\"ECE\");\r",
+									"    pm.expect(pm.response.json()[\"number\"]).to.eq(271);\r",
+									"    pm.expect(pm.response.json()[\"title\"]).to.eq(\"Digital Logic Design\");\r",
+									"    pm.expect(pm.response.json()[\"term\"]).to.eq(\"fall-24\");\r",
+									"    pm.expect(pm.response.json()[\"instructor_id\"]).to.eq(pm.environment.get('instructor1_id'));\r",
+									"    points += 0.75\r",
+									"});\r",
+									"\r",
+									"pm.test(\"self URL is valid (0.25 pts)\", function () {\r",
+									"    const respJSON = pm.response.json();\r",
+									"    pm.expect(respJSON[\"self\"]).to.eq(\r",
+									"        pm.environment.get(\"app_url\") + '/courses/' + respJSON[\"id\"]);\r",
+									"    points += 0.25\r",
+									"});\r",
+									"\r",
+									"console.log('******* Get a course Test 3 points = ' + points);\r",
+									"let points_course_get = pm.environment.get('points_course_get') + points;\r",
+									"console.log('******* Get a course Tests current points = ' + points_course_get);\r",
+									"pm.environment.set(\"points_course_get\", points_course_get);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{app_url}}/courses/{{course3_id}}",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"courses",
+								"{{course3_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "4. get course 4 200 (1 pts)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let points = 0; \r",
+									"\r",
+									"\r",
+									"pm.test(\"content is valid (0.75 pts)\", function () {\r",
+									"    const respJSON = pm.response.json();\r",
+									"    pm.expect(pm.response.json()[\"subject\"]).to.eq(\"AI\");\r",
+									"    pm.expect(pm.response.json()[\"number\"]).to.eq(534);\r",
+									"    pm.expect(pm.response.json()[\"title\"]).to.eq(\"Machine Learning\");\r",
+									"    pm.expect(pm.response.json()[\"term\"]).to.eq(\"fall-24\");\r",
+									"    pm.expect(pm.response.json()[\"instructor_id\"]).to.eq(pm.environment.get('instructor2_id'));\r",
+									"    points += 0.75\r",
+									"});\r",
+									"\r",
+									"pm.test(\"self URL is valid (0.25 pts)\", function () {\r",
+									"    const respJSON = pm.response.json();\r",
+									"    pm.expect(respJSON[\"self\"]).to.eq(\r",
+									"        pm.environment.get(\"app_url\") + '/courses/' + respJSON[\"id\"]);\r",
+									"    points += 0.25\r",
+									"});\r",
+									"\r",
+									"console.log('******* Get a course Test 4 points = ' + points);\r",
+									"let points_course_get = pm.environment.get('points_course_get') + points;\r",
+									"console.log('******* Get a course Tests current points = ' + points_course_get);\r",
+									"pm.environment.set(\"points_course_get\", points_course_get);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{app_url}}/courses/{{course4_id}}",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"courses",
+								"{{course4_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "5. get a course 404 (1 pts)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let points = 0; \r",
+									"\r",
+									"pm.test(\"status code is 404 (0.5 pts)\", function () {\r",
+									"    pm.response.to.have.status(404);\r",
+									"    points += 0.5\r",
+									"});\r",
+									"\r",
+									"pm.test(\"content is valid (0.5 pts)\", function () {\r",
+									"    const respJSON = pm.response.json();\r",
+									"    pm.expect(pm.response.json()[\"Error\"]).to.eq(\"Not found\");\r",
+									"    points += 0.5\r",
+									"});\r",
+									"\r",
+									"\r",
+									"console.log('******* Get a course Test 5 points = ' + points);\r",
+									"let points_course_get = pm.environment.get('points_course_get') + points;\r",
+									"console.log('+++++++++++++++++++++++++++++++++++++++++');\r",
+									"console.log('Get a course Tests Total points = ' + points_course_get);\r",
+									"console.log('+++++++++++++++++++++++++++++++++++++++++');\r",
+									"pm.environment.set(\"points_course_get\", points_course_get);\r",
+									"\r",
+									"console.log('+++++++++++++++++++++++++++++++++++++++++');\r",
+									"console.log('1. user login          = ' + pm.environment.get('points_login'));\r",
+									"console.log('2. all users           = ' + pm.environment.get('points_all_users'));\r",
+									"console.log('3a get a user - basic  = ' + pm.environment.get('points_user_basic'));\r",
+									"console.log('3b get a user - avurl  = ' + pm.environment.get('points_user_avatar_url'));\r",
+									"console.log('4 create avatar        = ' + pm.environment.get('points_avatar_create'));\r",
+									"console.log('5 get user\\'s avatar   = ' + pm.environment.get('points_avatar_get'));\r",
+									"console.log('6 delete avatar        = ' + pm.environment.get('points_avatar_delete'));\r",
+									"console.log('7 create a course      = ' + pm.environment.get('points_course_create'));\r",
+									"console.log('8 get courses          = ' + pm.environment.get('points_courses_get_all'));\r",
+									"console.log('9 get a course         = ' + pm.environment.get('points_course_get'));\r",
+									"console.log('+++++++++++++++++++++++++++++++++++++++++');\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{app_url}}/courses/{{invalid_course_id}}",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"courses",
+								"{{invalid_course_id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					"Object.prototype.get_sub = (jwt) => JSON.parse((Buffer.from(jwt.split('.')[1], 'base64').toString('ascii'))).sub;"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

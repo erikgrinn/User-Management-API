@@ -7,6 +7,7 @@
 # https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/programming-with-python.html
 # https://auth0.com/docs/quickstart/backend/python/01-authorization?_ga=2.46956069.349333901.1589042886-466012638.1589042885#create-the-jwt-validation-decorator
 # Auth0 configuration: must enable password
+# and give elastic beanstalk environment the dynamodb role in service access!
 # cat ~/.aws/credentials
 
 from flask import Flask, request, jsonify, send_file, render_template, url_for, redirect
@@ -42,9 +43,9 @@ BUCKET = 'myawsbucket-photos-1'
 
 
 # Update the values of the following 3 variables
-CLIENT_ID = os.environ.get('CLIENT_ID')
-CLIENT_SECRET = os.environ.get('CLIENT_SECRET')
-DOMAIN = os.environ.get('AUTH0_DOMAIN')
+AUTH0_CLIENT_ID = os.environ.get('AUTH0_CLIENT_ID')
+AUTH0_CLIENT_SECRET = os.environ.get('AUTH0_CLIENT_SECRET')
+AUTH0_DOMAIN = os.environ.get('AUTH0_DOMAIN')
 # For example
 # DOMAIN = '493-24-spring.us.auth0.com'
 # Note: don't include the protocol in the value of the variable DOMAIN
@@ -55,11 +56,11 @@ oauth = OAuth(app)
 
 auth0 = oauth.register(
     'auth0',
-    client_id=CLIENT_ID,
-    client_secret=CLIENT_SECRET,
-    api_base_url="https://" + DOMAIN,
-    access_token_url="https://" + DOMAIN + "/oauth/token",
-    authorize_url="https://" + DOMAIN + "/authorize",
+    client_id=AUTH0_CLIENT_ID,
+    client_secret=AUTH0_CLIENT_SECRET,
+    api_base_url="https://" + AUTH0_DOMAIN,
+    access_token_url="https://" + AUTH0_DOMAIN + "/oauth/token",
+    authorize_url="https://" + AUTH0_DOMAIN + "/authorize",
     client_kwargs={
         'scope': 'openid profile email',
     },
@@ -89,7 +90,7 @@ def verify_jwt(request):
                             "description":
                                 "Authorization header is missing"}, 401)
     
-    jsonurl = urlopen("https://"+ DOMAIN+"/.well-known/jwks.json")
+    jsonurl = urlopen("https://"+ AUTH0_DOMAIN+"/.well-known/jwks.json")
     jwks = json.loads(jsonurl.read())
     try:
         unverified_header = jwt.get_unverified_header(token)
@@ -119,8 +120,8 @@ def verify_jwt(request):
                 token,
                 rsa_key,
                 algorithms=ALGORITHMS,
-                audience=CLIENT_ID,
-                issuer="https://"+ DOMAIN+"/"
+                audience=AUTH0_CLIENT_ID,
+                issuer="https://"+ AUTH0_DOMAIN+"/"
             )
         except jwt.ExpiredSignatureError:
             raise AuthError({"code": "token_expired",
@@ -158,11 +159,11 @@ def login_user():
     password = content["password"]
     body = {'grant_type':'password','username':username,
             'password':password,
-            'client_id':CLIENT_ID,
-            'client_secret':CLIENT_SECRET,
+            'client_id':AUTH0_CLIENT_ID,
+            'client_secret':AUTH0_CLIENT_SECRET,
            }
     headers = { 'content-type': 'application/json' }
-    url = 'https://' + DOMAIN + '/oauth/token'
+    url = 'https://' + AUTH0_DOMAIN + '/oauth/token'
     r = requests.post(url, json=body, headers=headers)
     r_json = r.json()
     if 'error' in r_json:
